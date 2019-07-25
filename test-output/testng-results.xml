@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="31505" started-at="2019-07-25T11:38:09Z" finished-at="2019-07-25T11:38:40Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="31505" started-at="2019-07-25T11:38:09Z" finished-at="2019-07-25T11:38:40Z">
+      <class name="Etsy.WelcomeTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:Etsy.WelcomeTest@18be83e4]" name="setUp" is-config="true" duration-ms="7680" started-at="2019-07-25T12:38:09Z" finished-at="2019-07-25T12:38:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testSignIn()[pri:0, instance:Etsy.WelcomeTest@18be83e4]" name="testSignIn" duration-ms="20738" started-at="2019-07-25T12:38:16Z" finished-at="2019-07-25T12:38:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSignIn -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:Etsy.WelcomeTest@18be83e4]" name="tearDown" is-config="true" duration-ms="3054" started-at="2019-07-25T12:38:37Z" finished-at="2019-07-25T12:38:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- Etsy.WelcomeTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
