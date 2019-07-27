@@ -11,6 +11,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
 /**
@@ -25,7 +26,7 @@ public class WelcomeTest{
     private final String PLATFORM = "android";
     private final String SERVER = "http://0.0.0.0:4723/wd/hub";
     
-    @BeforeClass
+    @BeforeSuite
     public void setUp() throws IOException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("deviceName", DEVICE);
@@ -40,27 +41,22 @@ public class WelcomeTest{
         driver.quit();
     }
 
-
-    @Test()
-    public void testSignIn() {
-//        driver.startActivity(new Activity(PACKAGE, SEARCH_ACTIVITY));
+    @BeforeClass
+    public void transitToStart() {
         AndroidElement  get_started  = (AndroidElement) driver.findElementById("com.etsy.android:id/btn_link");
         get_started .click();
         AndroidElement sign_in_jump = (AndroidElement) driver.findElementById("com.etsy.android:id/btn_sign_in_dialog");
         sign_in_jump.click();
-        
+    }
+
+    public void testSignIn(String usernameInput, String pwdInput) {
         AndroidElement email_or_username =  (AndroidElement) driver.findElementById("com.etsy.android:id/edit_username");
-        email_or_username.sendKeys(Configuration.email_or_username);
+        email_or_username.sendKeys(usernameInput);
         AndroidElement password = (AndroidElement) driver.findElementById("com.etsy.android:id/edit_password");
-        password.sendKeys(Configuration.password);
+        password.sendKeys(pwdInput);
         AndroidElement sign_in = (AndroidElement) driver.findElementById("com.etsy.android:id/button_signin");
         sign_in.click();
-        try {
-			HelperClass.screenshot("etsy_sign_in", driver);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+
 //        searchBoxEl.sendKeys("Hello world!");
 //        AndroidElement onSearchRequestedBtn = (AndroidElement) driver.findElementById("btn_start_search");
 //        onSearchRequestedBtn.click();
@@ -69,6 +65,40 @@ public class WelcomeTest{
 //        String searchTextValue = searchText.getText();
 //        Assert.assertEquals(searchTextValue, "Hello world!");
     }
-    
+
+    @Test(groups = "signin")
+    public void testSignInConfig() {
+        testSignIn(Configuration.email_or_username, Configuration.password);
+        try {
+            HelperClass.screenshot("etsy_sign_in", driver);
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
+    @Test(groups = "signin")
+    public void testSignInEmpty() {
+        testSignIn("", "");
+        try {
+            HelperClass.screenshot("etsy_sign_in_empty", driver);
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
+    @Test(dependsOnGroups = "signin")
+    public void forgetPwd() {
+        AndroidElement forget_pwd = (AndroidElement) driver.findElementById("com.etsy.android:id/forgot_password_link");
+        forget_pwd.click();
+        try {
+            HelperClass.screenshot("etsy_forget_pwd", driver);
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
 
 }
