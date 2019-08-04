@@ -139,18 +139,58 @@ public class RepresentativeTests {
     }
 
     @Test
-    public void testCategory() {
-        //cannot get id/xpath of categories...
+    public void testCategory() throws InterruptedException {
+        //transit
+        Thread.sleep(1000);
+        AndroidElement email =  (AndroidElement) driver.findElementById("com.contextlogic.wish:id/sign_in_fragment_email_text");
+        email.sendKeys(Configuration.email);
+        AndroidElement password = (AndroidElement) driver.findElementById("com.contextlogic.wish:id/sign_in_fragment_password_text");
+        password.sendKeys(Configuration.password);
+        AndroidElement sign_in = (AndroidElement) driver.findElementById("com.contextlogic.wish:id/sign_in_fragment_sign_in_button");
+        sign_in.click();
+        Thread.sleep(5000);
+
+        //test
+        AndroidElement cat = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.support.v4.widget.DrawerLayout/android.widget.FrameLayout/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.TextView[2]");
+        cat.click();
     }
 
     @Test
     public void testContact() throws InterruptedException {
-        //cannot get id/xpath of contact form...
+        //transit
+        Thread.sleep(1000);
+        AndroidElement email =  (AndroidElement) driver.findElementById("com.contextlogic.wish:id/sign_in_fragment_email_text");
+        email.sendKeys(Configuration.email);
+        AndroidElement password = (AndroidElement) driver.findElementById("com.contextlogic.wish:id/sign_in_fragment_password_text");
+        password.sendKeys(Configuration.password);
+        AndroidElement sign_in = (AndroidElement) driver.findElementById("com.contextlogic.wish:id/sign_in_fragment_sign_in_button");
+        sign_in.click();
+        Thread.sleep(5000);
+        AndroidElement menu = (AndroidElement) driver.findElementByXPath("//android.widget.ImageButton[@content-desc=\"Open Menu\"]");
+        menu.click();
+
+        //test
+        AndroidElement contact = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.support.v4.widget.DrawerLayout/android.widget.FrameLayout[2]/android.widget.ListView/android.widget.LinearLayout[12]");
+        contact.click();
     }
 
     @Test
     public void testHelp() throws InterruptedException {
-        //cannot get id/xpath of help...
+        //transit
+        Thread.sleep(1000);
+        AndroidElement email =  (AndroidElement) driver.findElementById("com.contextlogic.wish:id/sign_in_fragment_email_text");
+        email.sendKeys(Configuration.email);
+        AndroidElement password = (AndroidElement) driver.findElementById("com.contextlogic.wish:id/sign_in_fragment_password_text");
+        password.sendKeys(Configuration.password);
+        AndroidElement sign_in = (AndroidElement) driver.findElementById("com.contextlogic.wish:id/sign_in_fragment_sign_in_button");
+        sign_in.click();
+        Thread.sleep(5000);
+        AndroidElement menu = (AndroidElement) driver.findElementByXPath("//android.widget.ImageButton[@content-desc=\"Open Menu\"]");
+        menu.click();
+
+        //test
+        AndroidElement help = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.support.v4.widget.DrawerLayout/android.widget.FrameLayout[2]/android.widget.ListView/android.widget.LinearLayout[13]");
+        help.click();
     }
 
     @Test
