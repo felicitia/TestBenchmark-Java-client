@@ -1,4 +1,4 @@
 .idea
 Configuration.java
-Configuration.class
+*.class
 .DS_Store
