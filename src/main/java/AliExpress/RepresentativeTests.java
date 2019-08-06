@@ -183,7 +183,7 @@ public class RepresentativeTests {
         //test
         AndroidElement sort = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/tv_spinner_item");
         sort.click();
-        AndroidElement price = (AndroidElement) driver.findElementByXPath("(/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[2]");
+        AndroidElement price = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[2]");
         price.click();
     }
 
@@ -211,7 +211,7 @@ public class RepresentativeTests {
         item.click();
 
         //test
-        AndroidElement add_cart = (AndroidElement) driver.findElementById("com.contextlogic.wish:id/product_details_fragment_add_to_cart_button");
+        AndroidElement add_cart = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/ll_addToCart");
         add_cart.click();
     }
 
@@ -224,7 +224,7 @@ public class RepresentativeTests {
         search_bar.sendKeys("aa\n");
         AndroidElement item = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/riv_productsummary_img");
         item.click();
-        AndroidElement add_cart = (AndroidElement) driver.findElementById("com.contextlogic.wish:id/product_details_fragment_add_to_cart_button");
+        AndroidElement add_cart = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/ll_addToCart");
         add_cart.click();
 
         //test
