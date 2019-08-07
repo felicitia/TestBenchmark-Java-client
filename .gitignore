@@ -2,3 +2,4 @@
 Configuration.java
 *.class
 .DS_Store
+/target/
