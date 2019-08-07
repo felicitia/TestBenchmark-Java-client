@@ -127,7 +127,7 @@ public class RepresentativeTests {
         AndroidElement add =  (AndroidElement) driver.findElementById("com.zappos.android.sixpmFlavor:id/generic_add_to_fab");
         add.click();
         AndroidElement street =  (AndroidElement) driver.findElementById("com.zappos.android.sixpmFlavor:id/add_update_shipping_address_address_line_1");
-        street.click();
+        street.sendKeys("941 Bloom Walk");
         AndroidElement save =  (AndroidElement) driver.findElementById("com.zappos.android.sixpmFlavor:id/add_update_save_btn");
         save.click();
     }
