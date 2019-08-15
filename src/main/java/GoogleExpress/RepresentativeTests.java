@@ -73,9 +73,9 @@ public class RepresentativeTests {
         myself.click();
 
         //test
-        AndroidElement username = (AndroidElement) driver.findElementById("//android.widget.EditText[@content-desc=\"First name\"]");
+        AndroidElement username = (AndroidElement) driver.findElementByXPath("//android.widget.EditText[@content-desc=\"First name\"]");
         username.sendKeys("aaa");
-        AndroidElement sign_up = (AndroidElement) driver.findElementById("//android.widget.Button[@content-desc=\"Next\"]");
+        AndroidElement sign_up = (AndroidElement) driver.findElementByXPath("//android.widget.Button[@content-desc=\"Next\"]");
         sign_up.click();
 
         //phone verification required afterward
