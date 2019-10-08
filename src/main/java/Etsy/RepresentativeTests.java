@@ -53,7 +53,7 @@ public class RepresentativeTests {
 
         //test
         AndroidElement email_or_username =  (AndroidElement) driver.findElementById("com.etsy.android:id/edit_username");
-        email_or_username.sendKeys(Configuration.email_or_username);
+        email_or_username.sendKeys(Configuration.email);
         AndroidElement password = (AndroidElement) driver.findElementById("com.etsy.android:id/edit_password");
         password.sendKeys(Configuration.password);
         AndroidElement sign_in = (AndroidElement) driver.findElementById("com.etsy.android:id/button_signin");
@@ -69,14 +69,18 @@ public class RepresentativeTests {
         sign_in_jump.click();
 
         //test
+        AndroidElement firstname = (AndroidElement) driver.findElementById("com.etsy.android:id/edit_first_name");
+        firstname.sendKeys(Configuration.firstname);
+        AndroidElement lastname = (AndroidElement) driver.findElementById("com.etsy.android:id/edit_last_name");
+        lastname.sendKeys(Configuration.lastname);
         AndroidElement email = (AndroidElement) driver.findElementById("com.etsy.android:id/edit_email");
-        email.sendKeys(Configuration.email_or_username);
+        email.sendKeys(Configuration.email);
         AndroidElement username = (AndroidElement) driver.findElementById("com.etsy.android:id/edit_username");
-        username.sendKeys("aaa");
+        username.sendKeys(Configuration.username);
         AndroidElement password = (AndroidElement) driver.findElementById("com.etsy.android:id/edit_register_password");
-        password.sendKeys("bbb");
+        password.sendKeys(Configuration.password);
         AndroidElement confirm_password = (AndroidElement) driver.findElementById("com.etsy.android:id/edit_password_confirm");
-        confirm_password.sendKeys("bbb");
+        confirm_password.sendKeys(Configuration.password);
         AndroidElement sign_up = (AndroidElement) driver.findElementById("com.etsy.android:id/button_register");
         sign_up.click();
     }
@@ -104,7 +108,7 @@ public class RepresentativeTests {
         AndroidElement sign_in_jump = (AndroidElement) driver.findElementById("com.etsy.android:id/btn_sign_in_dialog");
         sign_in_jump.click();
         AndroidElement email_or_username =  (AndroidElement) driver.findElementById("com.etsy.android:id/edit_username");
-        email_or_username.sendKeys(Configuration.email_or_username);
+        email_or_username.sendKeys(Configuration.email);
         AndroidElement password = (AndroidElement) driver.findElementById("com.etsy.android:id/edit_password");
         password.sendKeys(Configuration.password);
         AndroidElement sign_in = (AndroidElement) driver.findElementById("com.etsy.android:id/button_signin");
