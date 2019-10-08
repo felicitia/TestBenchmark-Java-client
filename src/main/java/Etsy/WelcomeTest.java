@@ -68,7 +68,7 @@ public class WelcomeTest{
 
     @Test(groups = "signin")
     public void testSignInConfig() {
-        testSignIn(Configuration.email_or_username, Configuration.password);
+        testSignIn(Configuration.email, Configuration.password);
         try {
             HelperClass.screenshot("etsy_sign_in", driver);
         } catch (IOException e) {
@@ -99,6 +99,5 @@ public class WelcomeTest{
             e.printStackTrace();
         }
     }
-
 
 }

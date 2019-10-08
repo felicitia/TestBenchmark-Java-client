@@ -66,14 +66,16 @@ public class RepresentativeTests {
         sign_up_jump.click();
 
         //test
+        AndroidElement firstname = (AndroidElement) driver.findElementById("com.contextlogic.geek:id/create_account_fragment_first_name_text");
+        firstname.sendKeys(Configuration.firstname);
+        AndroidElement lastname = (AndroidElement) driver.findElementById("com.contextlogic.geek:id/create_account_fragment_last_name_text");
+        lastname.sendKeys(Configuration.lastname);
         AndroidElement email = (AndroidElement) driver.findElementById("com.contextlogic.geek:id/create_account_fragment_email_text");
         email.sendKeys(Configuration.email);
         AndroidElement confirm_email = (AndroidElement) driver.findElementById("com.contextlogic.geek:id/create_account_fragment_confirm_email_text");
         confirm_email.sendKeys(Configuration.email);
-        AndroidElement username = (AndroidElement) driver.findElementById("com.contextlogic.geek:id/create_account_fragment_first_name_text");
-        username.sendKeys("aaa");
         AndroidElement password = (AndroidElement) driver.findElementById("com.contextlogic.geek:id/create_account_fragment_password_text");
-        password.sendKeys("bbb");
+        password.sendKeys(Configuration.password);
         AndroidElement sign_up = (AndroidElement) driver.findElementById("com.contextlogic.geek:id/create_account_fragment_create_account_button");
         sign_up.click();
     }
