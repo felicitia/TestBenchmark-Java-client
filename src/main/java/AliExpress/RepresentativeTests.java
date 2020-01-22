@@ -49,39 +49,37 @@ public class RepresentativeTests {
     @Test
     public void testSignIn() {
         //transit
-        AndroidElement menu = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/left_action");
-        menu.click();
-        AndroidElement menu_signin = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.support.v4.widget.DrawerLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.HorizontalScrollView/android.widget.LinearLayout/android.support.v7.app.ActionBar.Tab[1]");
+        AndroidElement account = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/navigation_my_ae");
+        account.click();
+        AndroidElement menu_signin = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/tv_un_login");
         menu_signin.click();
         AndroidElement signin_jump = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/btn_sign_in");
         signin_jump.click();
 
         //test
-        AndroidElement email =  (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.RelativeLayout[1]/android.widget.RelativeLayout/android.widget.EditText");
+        AndroidElement email =  (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/et_email");
         email.sendKeys(Configuration.email);
-        AndroidElement password = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.RelativeLayout[2]/android.widget.EditText");
+        AndroidElement password = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/et_password");
         password.sendKeys(Configuration.password);
-        AndroidElement sign_in = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/tv_forgot_password_label");
+        AndroidElement sign_in = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/rl_ali_sign_in_btn");
         sign_in.click();
     }
 
     @Test
     public void testSignUp() {
         //transit
-        AndroidElement menu = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/left_action");
-        menu.click();
-        AndroidElement menu_signin = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.support.v4.widget.DrawerLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.HorizontalScrollView/android.widget.LinearLayout/android.support.v7.app.ActionBar.Tab[1]");
+        AndroidElement account = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/navigation_my_ae");
+        account.click();
+        AndroidElement menu_signin = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/tv_un_login");
         menu_signin.click();
-        AndroidElement sign_up_jump = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/btn_register");
-        sign_up_jump.click();
+        AndroidElement signup_jump = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/btn_register");
+        signup_jump.click();
 
         //test
-        AndroidElement email = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout/android.widget.EditText");
+        AndroidElement email = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/et_email");
         email.sendKeys(Configuration.email);
-        AndroidElement username = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/et_first_name");
-        username.sendKeys("aaa");
-        AndroidElement password = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.RelativeLayout[4]/android.widget.EditText");
-        password.sendKeys("bbb");
+        AndroidElement password = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/et_password");
+        password.sendKeys(Configuration.password);
         AndroidElement sign_up = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/rl_ali_register_btn");
         sign_up.click();
     }
@@ -89,38 +87,76 @@ public class RepresentativeTests {
     @Test
     public void testAbout() {
         //transit
-        AndroidElement menu = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.support.v4.widget.DrawerLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.FrameLayout[1]/android.widget.RelativeLayout/android.widget.ImageButton[1]");
-        menu.click();
-
+        AndroidElement account = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/navigation_my_ae");
+        account.click();
+        AndroidElement settings = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/tv_settings");
+        settings.click();
         //test
-        AndroidElement about = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.support.v4.widget.DrawerLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.RelativeLayout[10]");
+        AndroidElement about = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/rl_version_settings");
         about.click();
     }
 
     @Test
-    public void testAddress() {
-        //transit
-        AndroidElement menu = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/left_action");
-        menu.click();
-        AndroidElement menu_signin = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.support.v4.widget.DrawerLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.HorizontalScrollView/android.widget.LinearLayout/android.support.v7.app.ActionBar.Tab[1]");
+    public void testAccount(){
+        //sign in
+        AndroidElement account = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/navigation_my_ae");
+        account.click();
+        AndroidElement menu_signin = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/tv_un_login");
         menu_signin.click();
         AndroidElement signin_jump = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/btn_sign_in");
         signin_jump.click();
-        AndroidElement email =  (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.RelativeLayout[1]/android.widget.RelativeLayout/android.widget.EditText");
+        AndroidElement email =  (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/et_email");
         email.sendKeys(Configuration.email);
-        AndroidElement password = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.RelativeLayout[2]/android.widget.EditText");
+        AndroidElement password = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/et_password");
         password.sendKeys(Configuration.password);
-        AndroidElement sign_in = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/tv_forgot_password_label");
+        AndroidElement sign_in = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/rl_ali_sign_in_btn");
         sign_in.click();
-        menu = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.support.v4.widget.DrawerLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.FrameLayout[1]/android.widget.RelativeLayout/android.widget.ImageButton[1]");
-        menu.click();
 
-        //test
-        AndroidElement account = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/iv_shipping_address");
+        AndroidElement settings = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/tv_settings");
+        settings.click();
+        AndroidElement profile = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/tv_account_setting");
+        profile.click();
+    }
+
+    @Test
+    public void testAddress() {
+        //sign in
+        AndroidElement account = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/navigation_my_ae");
         account.click();
-        AndroidElement address =  (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/ll_add_address");
-        address.click();
-        //got locked out of account before I could get the id/xpath of address input fields...
+        AndroidElement menu_signin = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/tv_un_login");
+        menu_signin.click();
+        AndroidElement signin_jump = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/btn_sign_in");
+        signin_jump.click();
+        AndroidElement email =  (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/et_email");
+        email.sendKeys(Configuration.email);
+        AndroidElement password = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/et_password");
+        password.sendKeys(Configuration.password);
+        AndroidElement sign_in = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/rl_ali_sign_in_btn");
+        sign_in.click();
+
+        AndroidElement settings = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/tv_settings");
+        settings.click();
+        AndroidElement shipping = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/rl_shipping_address");
+        shipping.click();
+        AndroidElement add_address = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/ll_add_address");
+        add_address.click();
+
+        AndroidElement contact_name = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/etfwc_base_edit_text");
+        contact_name.sendKeys(Configuration.contact_name);
+        AndroidElement phone = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/edit_address_tel_mobile");
+        phone.sendKeys(Configuration.phone);
+        AndroidElement street = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/edit_address_street_line1");
+        street.sendKeys(Configuration.street);
+        AndroidElement state = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/edit_address_province");
+        state.click();
+        AndroidElement state_selection = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/rb_selected_item");
+        state_selection.click();
+        AndroidElement city_selection = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/rb_selected_item");
+        city_selection.click();
+        AndroidElement zip = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/etfwc_base_edit_text");
+        zip.sendKeys(Configuration.zip);
+        AndroidElement save = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/btn_address_add");
+        save.click();
     }
 
     @Test
@@ -130,43 +166,52 @@ public class RepresentativeTests {
         category.click();
 
         //test
-        AndroidElement cat_1 = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[2]/android.widget.RelativeLayout/android.widget.FrameLayout[1]/android.widget.RelativeLayout/android.widget.LinearLayout");
+        AndroidElement cat_1 = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/tv_pic_text_mix_item_category_name");
         cat_1.click();
     }
 
     @Test
     public void testContact() {
-        //transit
-        AndroidElement menu = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/left_action");
-        menu.click();
+        //sign in
+        AndroidElement account = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/navigation_my_ae");
+        account.click();
+        AndroidElement menu_signin = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/tv_un_login");
+        menu_signin.click();
+        AndroidElement signin_jump = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/btn_sign_in");
+        signin_jump.click();
+        AndroidElement email =  (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/et_email");
+        email.sendKeys(Configuration.email);
+        AndroidElement password = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/et_password");
+        password.sendKeys(Configuration.password);
+        AndroidElement sign_in = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/rl_ali_sign_in_btn");
+        sign_in.click();
 
-        //test
-        AndroidElement contact = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.support.v4.widget.DrawerLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.RelativeLayout[12]");
-        contact.click();
+        AndroidElement settings = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/tv_settings");
+        settings.click();
+        AndroidElement profile = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/rl_account_setting");
+        profile.click();
     }
 
     @Test
     public void testHelp() {
-        //transit
-        AndroidElement menu = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/left_action");
-        menu.click();
+        AndroidElement account = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/navigation_my_ae");
+        account.click();
 
         //test
-        AndroidElement help = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.support.v4.widget.DrawerLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.RelativeLayout[13]");
+        AndroidElement help = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/tv_custom_service");
         help.click();
     }
 
     @Test
     public void testMenu() {
-        //test
-        AndroidElement menu = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/left_action");
-        menu.click();
+        AndroidElement account = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/navigation_my_ae");
+        account.click();
     }
 
     @Test
     public void testSearch() {
         //test
-        AndroidElement search = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/search_hint");
+        AndroidElement search = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/rl_search_box");
         search.click();
         AndroidElement search_bar = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/abs__search_src_text");
         search_bar.sendKeys("aa\n");
@@ -175,26 +220,25 @@ public class RepresentativeTests {
     @Test
     public void testFilter() {
         //transit
-        AndroidElement search = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/search_hint");
+        AndroidElement search = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/rl_search_box");
         search.click();
         AndroidElement search_bar = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/abs__search_src_text");
         search_bar.sendKeys("aa\n");
 
         //test
-        AndroidElement sort = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/tv_spinner_item");
-        sort.click();
-        AndroidElement price = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[2]");
-        price.click();
+        AndroidElement filter = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/search_btn_filter");
+        filter.click();
+        AndroidElement rating = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/search_switch_btn");
+        rating.click();
     }
 
     @Test
     public void testDetail() {
         //transit
-        AndroidElement search = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/search_hint");
+        AndroidElement search = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/rl_search_box");
         search.click();
         AndroidElement search_bar = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/abs__search_src_text");
         search_bar.sendKeys("aa\n");
-
         //test
         AndroidElement item = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/riv_productsummary_img");
         item.click();
@@ -203,7 +247,7 @@ public class RepresentativeTests {
     @Test
     public void testAddCart() {
         //transit
-        AndroidElement search = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/search_hint");
+        AndroidElement search = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/rl_search_box");
         search.click();
         AndroidElement search_bar = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/abs__search_src_text");
         search_bar.sendKeys("aa\n");
@@ -217,8 +261,8 @@ public class RepresentativeTests {
 
     @Test
     public void testCart() {
-        //transit
-        AndroidElement search = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/search_hint");
+//transit
+        AndroidElement search = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/rl_search_box");
         search.click();
         AndroidElement search_bar = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/abs__search_src_text");
         search_bar.sendKeys("aa\n");
@@ -239,13 +283,13 @@ public class RepresentativeTests {
     @Test
     public void testTerms() {
         //transit
-        AndroidElement menu = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.support.v4.widget.DrawerLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.FrameLayout[1]/android.widget.RelativeLayout/android.widget.ImageButton[1]");
-        menu.click();
-        AndroidElement settings = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.support.v4.widget.DrawerLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.RelativeLayout[10]");
+        AndroidElement account = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/navigation_my_ae");
+        account.click();
+        AndroidElement settings = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/tv_settings");
         settings.click();
 
         //test
-        AndroidElement legal = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/rl_privacy_policy_settings");
+        AndroidElement legal = (AndroidElement) driver.findElementById("com.alibaba.aliexpresshd:id/rl_legal_information_settings");
         legal.click();
     }
 

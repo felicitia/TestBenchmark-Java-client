@@ -54,10 +54,12 @@ public class RepresentativeTests {
     @Test
     public void testSignIn() {
         //transit
-        AndroidElement account = (AndroidElement) driver.findElementById("com.groupon:id/my_stuff");
-        account.click();
-        AndroidElement menu_signin = (AndroidElement) driver.findElementById("com.groupon:id/sign_in_button");
-        menu_signin.click();
+        AndroidElement jump = (AndroidElement) driver.findElementById("com.groupon:id/done");
+        jump.click();
+//        AndroidElement account = (AndroidElement) driver.findElementById("com.groupon:id/my_stuff");
+//        account.click();
+//        AndroidElement menu_signin = (AndroidElement) driver.findElementById("com.groupon:id/sign_in_button");
+//        menu_signin.click();
 
         //test
         AndroidElement email =  (AndroidElement) driver.findElementById("com.groupon:id/fragment_log_in_sign_up_email");
@@ -71,20 +73,22 @@ public class RepresentativeTests {
     @Test
     public void testSignUp() {
         //transit
-        AndroidElement account = (AndroidElement) driver.findElementById("com.groupon:id/my_stuff");
-        account.click();
-        AndroidElement menu_signin = (AndroidElement) driver.findElementById("com.groupon:id/sign_in_button");
-        menu_signin.click();
-        AndroidElement sign_up_jump = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView[2]");
-        sign_up_jump.click();
+        AndroidElement jump = (AndroidElement) driver.findElementById("com.groupon:id/done");
+        jump.click();
+//        AndroidElement account = (AndroidElement) driver.findElementById("com.groupon:id/my_stuff");
+//        account.click();
+//        AndroidElement menu_signin = (AndroidElement) driver.findElementById("com.groupon:id/sign_in_button");
+//        menu_signin.click();
+        AndroidElement newuser = (AndroidElement) driver.findElementByXPath("//android.widget.TextView[@text=\"NEW USER\"]");
+        newuser.click();
 
         //test
+        AndroidElement username = (AndroidElement) driver.findElementById("com.groupon:id/fragment_log_in_sign_up_name");
+        username.sendKeys(Configuration.username);
         AndroidElement email =  (AndroidElement) driver.findElementById("com.groupon:id/fragment_log_in_sign_up_email");
         email.sendKeys(Configuration.email);
-        AndroidElement username = (AndroidElement) driver.findElementById("com.groupon:id/fragment_log_in_sign_up_name");
-        username.sendKeys("aaa");
         AndroidElement password = (AndroidElement) driver.findElementById("com.groupon:id/fragment_log_in_sign_up_password");
-        password.sendKeys("bbb");
+        password.sendKeys(Configuration.password);
         AndroidElement sign_up = (AndroidElement) driver.findElementById("com.groupon:id/fragment_log_in_sign_up_groupon_button");
         sign_up.click();
     }
@@ -92,6 +96,8 @@ public class RepresentativeTests {
     @Test
     public void testAbout() {
         //transit
+        AndroidElement show = (AndroidElement) driver.findElementByXPath("//android.widget.Button[@text=\"Just show me the deals\"]");
+        show.click();
         AndroidElement settings = (AndroidElement) driver.findElementById("com.groupon:id/my_stuff");
         settings.click();
 
@@ -102,6 +108,20 @@ public class RepresentativeTests {
 
     @Test
     public void testAccount() {
+        //sign in
+        AndroidElement jump = (AndroidElement) driver.findElementById("com.groupon:id/done");
+        jump.click();
+//        AndroidElement account = (AndroidElement) driver.findElementById("com.groupon:id/my_stuff");
+//        account.click();
+//        AndroidElement menu_signin = (AndroidElement) driver.findElementById("com.groupon:id/sign_in_button");
+//        menu_signin.click();
+        AndroidElement email =  (AndroidElement) driver.findElementById("com.groupon:id/fragment_log_in_sign_up_email");
+        email.sendKeys(Configuration.email);
+        AndroidElement password = (AndroidElement) driver.findElementById("com.groupon:id/fragment_log_in_sign_up_password");
+        password.sendKeys(Configuration.password);
+        AndroidElement sign_in = (AndroidElement) driver.findElementById("com.groupon:id/fragment_log_in_sign_up_groupon_button");
+        sign_in.click();
+
         //test
         AndroidElement account = (AndroidElement) driver.findElementById("com.groupon:id/my_stuff");
         account.click();
@@ -110,18 +130,22 @@ public class RepresentativeTests {
     @Test
     public void testCategory() throws InterruptedException {
         //transit
+        AndroidElement show = (AndroidElement) driver.findElementByXPath("//android.widget.Button[@text=\"Just show me the deals\"]");
+        show.click();
         AndroidElement category = (AndroidElement) driver.findElementById("com.groupon:id/category_icon");
         category.click();
         Thread.sleep(5000);
 
         //test
-        AndroidElement cat_1 = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/androidx.viewpager.widget.ViewPager/android.widget.RelativeLayout/androidx.recyclerview.widget.RecyclerView/android.widget.RelativeLayout[1]/androidx.recyclerview.widget.RecyclerView/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[1]/android.view.ViewGroup");
+        AndroidElement cat_1 = (AndroidElement) driver.findElementById("com.groupon:id/categoryCardContentContainer");
         cat_1.click();
     }
 
     @Test
     public void testContact() {
         //transit
+        AndroidElement show = (AndroidElement) driver.findElementByXPath("//android.widget.Button[@text=\"Just show me the deals\"]");
+        show.click();
         AndroidElement settings = (AndroidElement) driver.findElementById("com.groupon:id/my_stuff");
         settings.click();
 
@@ -133,6 +157,8 @@ public class RepresentativeTests {
     @Test
     public void testSearch() {
         //test
+        AndroidElement show = (AndroidElement) driver.findElementByXPath("//android.widget.Button[@text=\"Just show me the deals\"]");
+        show.click();
         AndroidElement search = (AndroidElement) driver.findElementById("com.groupon:id/global_search_button_text");
         search.click();
         AndroidElement search_bar = (AndroidElement) driver.findElementById("com.groupon:id/search_edittext");
@@ -142,6 +168,8 @@ public class RepresentativeTests {
     @Test
     public void testFilter() throws InterruptedException {
         //transit
+        AndroidElement show = (AndroidElement) driver.findElementByXPath("//android.widget.Button[@text=\"Just show me the deals\"]");
+        show.click();
         AndroidElement search = (AndroidElement) driver.findElementById("com.groupon:id/global_search_button_text");
         search.click();
         AndroidElement search_bar = (AndroidElement) driver.findElementById("com.groupon:id/search_edittext");
@@ -160,6 +188,8 @@ public class RepresentativeTests {
     @Test
     public void testDetail() {
         //transit
+        AndroidElement show = (AndroidElement) driver.findElementByXPath("//android.widget.Button[@text=\"Just show me the deals\"]");
+        show.click();
         AndroidElement search = (AndroidElement) driver.findElementById("com.groupon:id/global_search_button_text");
         search.click();
         AndroidElement search_bar = (AndroidElement) driver.findElementById("com.groupon:id/search_edittext");
@@ -172,7 +202,16 @@ public class RepresentativeTests {
 
     @Test
     public void testAddCart() {
-        //transit
+        //sign in
+        AndroidElement jump = (AndroidElement) driver.findElementById("com.groupon:id/done");
+        jump.click();
+        AndroidElement email =  (AndroidElement) driver.findElementById("com.groupon:id/fragment_log_in_sign_up_email");
+        email.sendKeys(Configuration.email);
+        AndroidElement password = (AndroidElement) driver.findElementById("com.groupon:id/fragment_log_in_sign_up_password");
+        password.sendKeys(Configuration.password);
+        AndroidElement sign_in = (AndroidElement) driver.findElementById("com.groupon:id/fragment_log_in_sign_up_groupon_button");
+        sign_in.click();
+
         AndroidElement search = (AndroidElement) driver.findElementById("com.groupon:id/global_search_button_text");
         search.click();
         AndroidElement search_bar = (AndroidElement) driver.findElementById("com.groupon:id/search_edittext");
@@ -187,24 +226,66 @@ public class RepresentativeTests {
 
     @Test
     public void testCart() {
-        //test
+        //sign in
+        AndroidElement jump = (AndroidElement) driver.findElementById("com.groupon:id/done");
+        jump.click();
+        AndroidElement email =  (AndroidElement) driver.findElementById("com.groupon:id/fragment_log_in_sign_up_email");
+        email.sendKeys(Configuration.email);
+        AndroidElement password = (AndroidElement) driver.findElementById("com.groupon:id/fragment_log_in_sign_up_password");
+        password.sendKeys(Configuration.password);
+        AndroidElement sign_in = (AndroidElement) driver.findElementById("com.groupon:id/fragment_log_in_sign_up_groupon_button");
+        sign_in.click();
+
         AndroidElement search = (AndroidElement) driver.findElementById("com.groupon:id/global_search_button_text");
         search.click();
         AndroidElement search_bar = (AndroidElement) driver.findElementById("com.groupon:id/search_edittext");
         search_bar.sendKeys("aa\n");
         AndroidElement item = (AndroidElement) driver.findElementById("com.groupon:id/deal_image");
         item.click();
+
         AndroidElement add_cart = (AndroidElement) driver.findElementById("com.groupon:id/cta_button");
         add_cart.click();
 
         //test
         AndroidElement cart = (AndroidElement) driver.findElementById("com.groupon:id/ic_shopping_cart");
         cart.click();
+        AndroidElement quantity = (AndroidElement) driver.findElementById("com.groupon:id/quantity_button_text");
+        quantity.click();
+        AndroidElement remove = (AndroidElement) driver.findElementById("com.groupon:id/quantity_button_image");
+        remove.click();
+        AndroidElement remove_confirm = (AndroidElement) driver.findElementById("com.groupon:id/dialog_positive_button");
+        remove_confirm.click();
     }
+
+    @Test
+    public void testHelp(){
+        //transit
+        AndroidElement show = (AndroidElement) driver.findElementByXPath("//android.widget.Button[@text=\"Just show me the deals\"]");
+        show.click();
+        AndroidElement settings = (AndroidElement) driver.findElementById("com.groupon:id/my_stuff");
+        settings.click();
+
+        //test
+        AndroidElement help = (AndroidElement) driver.findElementByXPath("//android.widget.TextView[@text=\"Customer Support\"]");
+        help.click();
+
+    }
+
+    @Test
+    public void testMenu() {
+        //test
+        AndroidElement show = (AndroidElement) driver.findElementByXPath("//android.widget.Button[@text=\"Just show me the deals\"]");
+        show.click();
+        AndroidElement menu = (AndroidElement) driver.findElementById("com.groupon:id/my_stuff");
+        menu.click();
+    }
+
 
     @Test
     public void testTerms() {
         //transit
+        AndroidElement show = (AndroidElement) driver.findElementByXPath("//android.widget.Button[@text=\"Just show me the deals\"]");
+        show.click();
         AndroidElement settings = (AndroidElement) driver.findElementById("com.groupon:id/my_stuff");
         settings.click();
         AndroidElement about = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/androidx.viewpager.widget.ViewPager/android.widget.RelativeLayout/android.view.ViewGroup/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[5]/android.widget.FrameLayout");
@@ -215,4 +296,8 @@ public class RepresentativeTests {
         legal.click();
     }
 
+    @Test
+    public void testAddress() {
+        //no address
+    }
 }

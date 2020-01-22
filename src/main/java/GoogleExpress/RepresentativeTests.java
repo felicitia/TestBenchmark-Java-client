@@ -47,7 +47,8 @@ public class RepresentativeTests {
 
     @Test
     public void testSignIn() {
-        //transit
+        AndroidElement started = (AndroidElement) driver.findElementById("com.google.android.apps.shopping.express:id/welcome_btn_get_started");
+        started.click();
         AndroidElement signin_jump = (AndroidElement) driver.findElementById("com.google.android.apps.shopping.express:id/account_drop_down_arrow");
         signin_jump.click();
 
@@ -73,8 +74,10 @@ public class RepresentativeTests {
         myself.click();
 
         //test
-        AndroidElement username = (AndroidElement) driver.findElementByXPath("//android.widget.EditText[@content-desc=\"First name\"]");
-        username.sendKeys("aaa");
+        AndroidElement first_name = (AndroidElement) driver.findElementByXPath("//android.widget.EditText[@content-desc=\"First name\"]");
+        first_name.sendKeys(Configuration.first_name);
+        AndroidElement last_name = (AndroidElement) driver.findElementByXPath("//android.widget.EditText[@content-desc=\"Last name\"]");
+        last_name.sendKeys(Configuration.last_name);
         AndroidElement sign_up = (AndroidElement) driver.findElementByXPath("//android.widget.Button[@content-desc=\"Next\"]");
         sign_up.click();
 
@@ -92,14 +95,47 @@ public class RepresentativeTests {
         AndroidElement menu = (AndroidElement) driver.findElementByXPath("//android.widget.ImageView[@content-desc=\"More options\"]");
         menu.click();
 
-
         //test
         AndroidElement about = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[4]/android.widget.LinearLayout");
         about.click();
     }
 
     @Test
+    public void testAccount(){
+        //sign in
+        AndroidElement started = (AndroidElement) driver.findElementById("com.google.android.apps.shopping.express:id/welcome_btn_get_started");
+        started.click();
+        AndroidElement signin_jump = (AndroidElement) driver.findElementById("com.google.android.apps.shopping.express:id/account_drop_down_arrow");
+        signin_jump.click();
+        AndroidElement email =  (AndroidElement) driver.findElementByXPath("//android.widget.EditText[@content-desc=\"Email or phone\"]");
+        email.sendKeys(Configuration.email);
+        AndroidElement signin_continue = (AndroidElement) driver.findElementByXPath("//android.widget.Button[@content-desc=\"Next\"]");
+        signin_continue.click();
+        AndroidElement password = (AndroidElement) driver.findElementByXPath("//android.webkit.WebView[@content-desc=\"Welcome\"]/android.view.View/android.view.View[3]");
+        password.sendKeys(Configuration.password);
+        AndroidElement sign_in = (AndroidElement) driver.findElementByXPath("//android.widget.Button[@content-desc=\"Next\"]");
+        sign_in.click();
+
+        AndroidElement account = (AndroidElement) driver.findElementById("com.google.android.apps.shopping.express:id/navigation_action_account");
+        account.click();
+    }
+
+    @Test
     public void testAddress() throws InterruptedException {
+        //sign in
+        AndroidElement started = (AndroidElement) driver.findElementById("com.google.android.apps.shopping.express:id/welcome_btn_get_started");
+        started.click();
+        AndroidElement signin_jump = (AndroidElement) driver.findElementById("com.google.android.apps.shopping.express:id/account_drop_down_arrow");
+        signin_jump.click();
+        AndroidElement email =  (AndroidElement) driver.findElementByXPath("//android.widget.EditText[@content-desc=\"Email or phone\"]");
+        email.sendKeys(Configuration.email);
+        AndroidElement signin_continue = (AndroidElement) driver.findElementByXPath("//android.widget.Button[@content-desc=\"Next\"]");
+        signin_continue.click();
+        AndroidElement password = (AndroidElement) driver.findElementByXPath("//android.webkit.WebView[@content-desc=\"Welcome\"]/android.view.View/android.view.View[3]");
+        password.sendKeys(Configuration.password);
+        AndroidElement sign_in = (AndroidElement) driver.findElementByXPath("//android.widget.Button[@content-desc=\"Next\"]");
+        sign_in.click();
+
         //test
         Thread.sleep(5000);
         AndroidElement account = (AndroidElement) driver.findElementById("com.google.android.apps.shopping.express:id/navigation_action_account");
@@ -111,8 +147,21 @@ public class RepresentativeTests {
         address.click();
         AndroidElement address_add =  (AndroidElement) driver.findElementById("com.google.android.apps.shopping.express:id/empty_address_screen_add_address_button");
         address_add.click();
-        AndroidElement address_street =  (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[3]/android.widget.FrameLayout/android.widget.EditText");
-        address_street.sendKeys("941 Bloom Walk");
+
+        AndroidElement recipient = (AndroidElement) driver.findElementById("com.google.android.apps.shopping.express:id/address_recipient");
+        recipient.sendKeys(Configuration.first_name);
+        AndroidElement address_street =  (AndroidElement) driver.findElementById("com.google.android.apps.shopping.express:id/address_street");
+        address_street.sendKeys(Configuration.street);
+        AndroidElement city = (AndroidElement) driver.findElementById("com.google.android.apps.shopping.express:id/address_city");
+        city.sendKeys(Configuration.city);
+        AndroidElement state_selection = (AndroidElement) driver.findElementById("com.google.android.apps.shopping.express:id/address_state_spinner");
+        state_selection.click();
+        AndroidElement state = (AndroidElement) driver.findElementById("android:id/text1");
+        state.click();
+        AndroidElement zip = (AndroidElement) driver.findElementById("com.google.android.apps.shopping.express:id/address_zip_code");
+        zip.sendKeys(Configuration.zip);
+        AndroidElement phone = (AndroidElement) driver.findElementById("com.google.android.apps.shopping.express:id/phone_number");
+        phone.sendKeys(Configuration.phone);
         AndroidElement address_save =  (AndroidElement) driver.findElementById("com.google.android.apps.shopping.express:id/save_address_button");
         address_save.click();
     }
@@ -121,7 +170,9 @@ public class RepresentativeTests {
     public void testCategory() throws InterruptedException {
         //test
         Thread.sleep(5000);
-        AndroidElement cat_1 = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[1]/android.support.v7.widget.RecyclerView/android.support.design.card.MaterialCardView[1]/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ImageView");
+        AndroidElement browse = (AndroidElement) driver.findElementById("com.google.android.apps.shopping.express:id/navigation_action_browse");
+        browse.click();
+        AndroidElement cat_1 = (AndroidElement) driver.findElementById("com.google.android.apps.shopping.express:id/browse_title_container");
         cat_1.click();
     }
 
@@ -135,8 +186,15 @@ public class RepresentativeTests {
         help.click();
 
         //test
-        AndroidElement contact = (AndroidElement) driver.findElementById("com.google.android.gms:id/gh_feedback_option");
+        AndroidElement contact = (AndroidElement) driver.findElementById("com.google.android.apps.helprtc:id/gh_help_content_line_item");
         contact.click();
+    }
+
+    @Test
+    public void testMenu() throws InterruptedException {
+        Thread.sleep(5000);
+        AndroidElement account = (AndroidElement) driver.findElementById("com.google.android.apps.shopping.express:id/navigation_action_account");
+        account.click();
     }
 
     @Test
@@ -239,9 +297,13 @@ public class RepresentativeTests {
         Thread.sleep(5000);
         AndroidElement account = (AndroidElement) driver.findElementById("com.google.android.apps.shopping.express:id/navigation_action_account");
         account.click();
+        AndroidElement help = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v4.view.ViewPager/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.support.v7.widget.RecyclerView/android.support.v7.widget.LinearLayoutCompat[5]/android.widget.CheckedTextView");
+        help.click();
+        AndroidElement menu = (AndroidElement) driver.findElementByXPath("//android.widget.ImageView[@content-desc=\"More options\"]");
+        menu.click();
 
         //test
-        AndroidElement legal = (AndroidElement) driver.findElementById("com.google.android.apps.shopping.express:id/og_tos_button");
+        AndroidElement legal = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[5]/android.widget.LinearLayout");
         legal.click();
     }
 

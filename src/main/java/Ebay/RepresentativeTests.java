@@ -50,7 +50,7 @@ public class RepresentativeTests {
         Thread.sleep(5000);
         AndroidElement home_signin = (AndroidElement) driver.findElementById("com.ebay.mobile:id/button_sign_in");
         home_signin.click();
-        AndroidElement signin_jump = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout[2]/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.LinearLayout[2]/android.widget.Button[1]");
+        AndroidElement signin_jump = (AndroidElement) driver.findElementById("com.ebay.mobile:id/button_classic");
         signin_jump.click();
 
         //test
@@ -66,9 +66,9 @@ public class RepresentativeTests {
     public void testSignUp() throws InterruptedException {
         //transit
         Thread.sleep(5000);
-        AndroidElement home_signin = (AndroidElement) driver.findElementById("com.ebay.mobile:id/button_register");
-        home_signin.click();
-        AndroidElement sign_up_jump = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout[2]/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.Button[1]");
+        AndroidElement home_signup = (AndroidElement) driver.findElementById("com.ebay.mobile:id/button_register");
+        home_signup.click();
+        AndroidElement sign_up_jump = (AndroidElement) driver.findElementById("com.ebay.mobile:id/button_classic");
         sign_up_jump.click();
 
         //test
@@ -76,10 +76,12 @@ public class RepresentativeTests {
         email.sendKeys(Configuration.email);
         AndroidElement username = (AndroidElement) driver.findElementById("com.ebay.mobile:id/et_first_name");
         username.sendKeys("aaa");
+        AndroidElement last_name = (AndroidElement) driver.findElementById("com.ebay.mobile:id/et_last_name");
+        last_name.sendKeys("bbb");
         AndroidElement signup_continue = (AndroidElement) driver.findElementById("com.ebay.mobile:id/bt_continue");
         signup_continue.click();
-        AndroidElement password = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout[2]/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.EditText");
-        password.sendKeys("bbb");
+        AndroidElement password = (AndroidElement) driver.findElementById("com.ebay.mobile:id/et_temp");
+        password.sendKeys(Configuration.password);
         AndroidElement sign_up = (AndroidElement) driver.findElementById("com.ebay.mobile:id/bt_create_your_account");
         sign_up.click();
     }
@@ -98,12 +100,18 @@ public class RepresentativeTests {
     }
 
     @Test
+    public void testAddress() throws InterruptedException {
+        //no address
+
+    }
+
+    @Test
     public void testAccount() throws InterruptedException {
-        //transit
+        //sign in
         Thread.sleep(5000);
         AndroidElement home_signin = (AndroidElement) driver.findElementById("com.ebay.mobile:id/button_sign_in");
         home_signin.click();
-        AndroidElement signin_jump = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout[2]/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.LinearLayout[2]/android.widget.Button[1]");
+        AndroidElement signin_jump = (AndroidElement) driver.findElementById("com.ebay.mobile:id/button_classic");
         signin_jump.click();
         AndroidElement email =  (AndroidElement) driver.findElementById("com.ebay.mobile:id/edit_text_username");
         email.sendKeys(Configuration.email);
@@ -111,6 +119,7 @@ public class RepresentativeTests {
         password.sendKeys(Configuration.password);
         AndroidElement sign_in = (AndroidElement) driver.findElementById("com.ebay.mobile:id/button_sign_in");
         sign_in.click();
+
         Thread.sleep(5000);
         AndroidElement menu = (AndroidElement) driver.findElementById("com.ebay.mobile:id/home");
         menu.click();
@@ -118,6 +127,16 @@ public class RepresentativeTests {
         //test
         AndroidElement account = (AndroidElement) driver.findElementById("com.ebay.mobile:id/textview_sign_in_status");
         account.click();
+    }
+
+    @Test
+    public void testContact() {
+        AndroidElement menu = (AndroidElement) driver.findElementById("com.ebay.mobile:id/home");
+        menu.click();
+        AndroidElement help = (AndroidElement) driver.findElementById("com.ebay.mobile:id/menuitem_help_contact");
+        help.click();
+        AndroidElement call = (AndroidElement) driver.findElementById("recommend_call_us");
+        call.click();
     }
 
     @Test
@@ -208,8 +227,8 @@ public class RepresentativeTests {
     @Test
     public void testCart() {
         //test
-        AndroidElement cart = (AndroidElement) driver.findElementById("com.ebay.mobile:id/action_view_icon");
-        cart.click();
+//        AndroidElement cart = (AndroidElement) driver.findElementById("com.ebay.mobile:id/action_view_icon");
+//        cart.click();
 
         //cart actions require confirmed phone number
     }

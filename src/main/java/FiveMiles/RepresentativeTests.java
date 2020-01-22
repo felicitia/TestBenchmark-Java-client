@@ -47,14 +47,14 @@ public class RepresentativeTests {
     @Test
     public void testSignIn() throws InterruptedException {
         //transit
-        AndroidElement signin_jump = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.Button[2]");
+        AndroidElement signin_jump = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/sign_in");
         signin_jump.click();
         Thread.sleep(1000);
 
         //test
-        AndroidElement email =  (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/TextInputLayout[1]/android.widget.FrameLayout/android.widget.EditText");
+        AndroidElement email =  (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/login_email");
         email.sendKeys(Configuration.email);
-        AndroidElement password = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/TextInputLayout[2]/android.widget.FrameLayout/android.widget.EditText");
+        AndroidElement password = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/login_password");
         password.sendKeys(Configuration.password);
         AndroidElement sign_in = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/login_login");
         sign_in.click();
@@ -68,38 +68,36 @@ public class RepresentativeTests {
         Thread.sleep(1000);
 
         //test
-        AndroidElement email = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/TextInputLayout[3]/android.widget.FrameLayout/android.widget.EditText");
+        AndroidElement first_name = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/login_first_name");
+        first_name.sendKeys(Configuration.first_name);
+        AndroidElement last_name = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/login_last_name");
+        last_name.sendKeys(Configuration.last_name);
+        AndroidElement email = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/login_email");
         email.sendKeys(Configuration.email);
-        AndroidElement username = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/login_first_name");
-        username.sendKeys("aaa");
-        AndroidElement password = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/TextInputLayout[4]/android.widget.FrameLayout/android.widget.EditText");
-        password.sendKeys("bbb");
+        AndroidElement password = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/login_password");
+        password.sendKeys(Configuration.password);
         AndroidElement sign_up = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/register_register");
         sign_up.click();
     }
 
     @Test
     public void testAbout() throws InterruptedException {
-        //transit
-        AndroidElement signin_jump = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.Button[2]");
+        //sign in
+        AndroidElement signin_jump = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/sign_in");
         signin_jump.click();
         Thread.sleep(1000);
-        AndroidElement email =  (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/TextInputLayout[1]/android.widget.FrameLayout/android.widget.EditText");
+        AndroidElement email =  (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/login_email");
         email.sendKeys(Configuration.email);
-        AndroidElement password = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/TextInputLayout[2]/android.widget.FrameLayout/android.widget.EditText");
+        AndroidElement password = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/login_password");
         password.sendKeys(Configuration.password);
         AndroidElement sign_in = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/login_login");
         sign_in.click();
         Thread.sleep(2000);
-        AndroidElement skip = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/btn_skip");
-        skip.click();
-        AndroidElement home = (AndroidElement) driver.findElementByXPath("//android.widget.ImageButton[@content-desc=\"Navigate up\"]");
-        home.click();
+
         AndroidElement account = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/main_tab_profile");
         account.click();
         AndroidElement settings = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/profile_setting");
         settings.click();
-        //fails due to verification popup
 
         //test
         AndroidElement about = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/setting_aboutus");
@@ -108,48 +106,41 @@ public class RepresentativeTests {
 
     @Test
     public void testAccount() throws InterruptedException {
-        //transit
-        AndroidElement signin_jump = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.Button[2]");
+        //sign in
+        AndroidElement signin_jump = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/sign_in");
         signin_jump.click();
         Thread.sleep(1000);
-        AndroidElement email =  (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/TextInputLayout[1]/android.widget.FrameLayout/android.widget.EditText");
+        AndroidElement email =  (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/login_email");
         email.sendKeys(Configuration.email);
-        AndroidElement password = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/TextInputLayout[2]/android.widget.FrameLayout/android.widget.EditText");
+        AndroidElement password = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/login_password");
         password.sendKeys(Configuration.password);
         AndroidElement sign_in = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/login_login");
         sign_in.click();
         Thread.sleep(2000);
-        AndroidElement skip = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/btn_skip");
-        skip.click();
-        AndroidElement home = (AndroidElement) driver.findElementByXPath("//android.widget.ImageButton[@content-desc=\"Navigate up\"]");
-        home.click();
 
-        //test
         AndroidElement account = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/main_tab_profile");
         account.click();
+        AndroidElement profile = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/profile_edit_profile");
+        profile.click();
+
     }
 
     @Test
     public void testCategory() throws InterruptedException {
-        //transit
-        AndroidElement signin_jump = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.Button[2]");
+        //sign in
+        AndroidElement signin_jump = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/sign_in");
         signin_jump.click();
         Thread.sleep(1000);
-        AndroidElement email =  (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/TextInputLayout[1]/android.widget.FrameLayout/android.widget.EditText");
+        AndroidElement email =  (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/login_email");
         email.sendKeys(Configuration.email);
-        AndroidElement password = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/TextInputLayout[2]/android.widget.FrameLayout/android.widget.EditText");
+        AndroidElement password = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/login_password");
         password.sendKeys(Configuration.password);
         AndroidElement sign_in = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/login_login");
         sign_in.click();
         Thread.sleep(2000);
-        AndroidElement skip = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/btn_skip");
-        skip.click();
-        AndroidElement home = (AndroidElement) driver.findElementByXPath("//android.widget.ImageButton[@content-desc=\"Navigate up\"]");
-        home.click();
+
         AndroidElement category = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/main_tab_search");
         category.click();
-
-        //test
         AndroidElement cat_1 = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.TabHost/android.widget.FrameLayout/android.widget.FrameLayout[1]/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.ListView/android.widget.LinearLayout[1]/android.widget.TextView");
         cat_1.click();
     }
@@ -161,70 +152,56 @@ public class RepresentativeTests {
 
     @Test
     public void testHelp() throws InterruptedException {
-        //transit
-        AndroidElement signin_jump = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.Button[2]");
+        //sign in
+        AndroidElement signin_jump = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/sign_in");
         signin_jump.click();
         Thread.sleep(1000);
-        AndroidElement email =  (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/TextInputLayout[1]/android.widget.FrameLayout/android.widget.EditText");
+        AndroidElement email =  (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/login_email");
         email.sendKeys(Configuration.email);
-        AndroidElement password = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/TextInputLayout[2]/android.widget.FrameLayout/android.widget.EditText");
+        AndroidElement password = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/login_password");
         password.sendKeys(Configuration.password);
         AndroidElement sign_in = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/login_login");
         sign_in.click();
         Thread.sleep(2000);
-        AndroidElement skip = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/btn_skip");
-        skip.click();
-        AndroidElement home = (AndroidElement) driver.findElementByXPath("//android.widget.ImageButton[@content-desc=\"Navigate up\"]");
-        home.click();
         AndroidElement account = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/main_tab_profile");
         account.click();
 
         //test
         AndroidElement help = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/profile_help");
         help.click();
-        //fails due to verification popup
     }
 
     @Test
     public void testMenu() throws InterruptedException {
-        //transit
-        AndroidElement signin_jump = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.Button[2]");
+        //sign in
+        AndroidElement signin_jump = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/sign_in");
         signin_jump.click();
         Thread.sleep(1000);
-        AndroidElement email =  (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/TextInputLayout[1]/android.widget.FrameLayout/android.widget.EditText");
+        AndroidElement email =  (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/login_email");
         email.sendKeys(Configuration.email);
-        AndroidElement password = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/TextInputLayout[2]/android.widget.FrameLayout/android.widget.EditText");
+        AndroidElement password = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/login_password");
         password.sendKeys(Configuration.password);
         AndroidElement sign_in = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/login_login");
         sign_in.click();
         Thread.sleep(2000);
-        AndroidElement skip = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/btn_skip");
-        skip.click();
-        AndroidElement home = (AndroidElement) driver.findElementByXPath("//android.widget.ImageButton[@content-desc=\"Navigate up\"]");
-        home.click();
 
-        //test
         AndroidElement menu = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/main_tab_profile");
         menu.click();
     }
 
     @Test
     public void testSearch() throws InterruptedException {
-        //transit
-        AndroidElement signin_jump = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.Button[2]");
+        //sign in
+        AndroidElement signin_jump = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/sign_in");
         signin_jump.click();
         Thread.sleep(1000);
-        AndroidElement email =  (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/TextInputLayout[1]/android.widget.FrameLayout/android.widget.EditText");
+        AndroidElement email =  (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/login_email");
         email.sendKeys(Configuration.email);
-        AndroidElement password = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/TextInputLayout[2]/android.widget.FrameLayout/android.widget.EditText");
+        AndroidElement password = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/login_password");
         password.sendKeys(Configuration.password);
         AndroidElement sign_in = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/login_login");
         sign_in.click();
         Thread.sleep(2000);
-        AndroidElement skip = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/btn_skip");
-        skip.click();
-        AndroidElement home = (AndroidElement) driver.findElementByXPath("//android.widget.ImageButton[@content-desc=\"Navigate up\"]");
-        home.click();
 
         //test
         AndroidElement search = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/lbl_search");
@@ -235,30 +212,29 @@ public class RepresentativeTests {
 
     @Test
     public void testFilter() throws InterruptedException {
-        //transit
-        AndroidElement signin_jump = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.Button[2]");
+        //sign in
+        AndroidElement signin_jump = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/sign_in");
         signin_jump.click();
         Thread.sleep(1000);
-        AndroidElement email =  (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/TextInputLayout[1]/android.widget.FrameLayout/android.widget.EditText");
+        AndroidElement email =  (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/login_email");
         email.sendKeys(Configuration.email);
-        AndroidElement password = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/TextInputLayout[2]/android.widget.FrameLayout/android.widget.EditText");
+        AndroidElement password = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/login_password");
         password.sendKeys(Configuration.password);
         AndroidElement sign_in = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/login_login");
         sign_in.click();
         Thread.sleep(2000);
-        AndroidElement skip = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/btn_skip");
-        skip.click();
-        AndroidElement home = (AndroidElement) driver.findElementByXPath("//android.widget.ImageButton[@content-desc=\"Navigate up\"]");
-        home.click();
+
+        //search
         AndroidElement search = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/lbl_search");
         search.click();
         AndroidElement search_bar = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/edt_keyword_search");
         search_bar.sendKeys("aa\n");
-        //fails due to enter key not working
 
         //test
         AndroidElement filter = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/ic_filter");
         filter.click();
+        AndroidElement sort_order = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/txt_sort_order");
+        sort_order.click();
         AndroidElement price = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/cbx_sort_price_asc");
         price.click();
         AndroidElement done = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/btn_save_filter");
@@ -267,26 +243,23 @@ public class RepresentativeTests {
 
     @Test
     public void testDetail() throws InterruptedException {
-        //transit
-        AndroidElement signin_jump = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.Button[2]");
+        //sign in
+        AndroidElement signin_jump = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/sign_in");
         signin_jump.click();
         Thread.sleep(1000);
-        AndroidElement email =  (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/TextInputLayout[1]/android.widget.FrameLayout/android.widget.EditText");
+        AndroidElement email =  (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/login_email");
         email.sendKeys(Configuration.email);
-        AndroidElement password = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/TextInputLayout[2]/android.widget.FrameLayout/android.widget.EditText");
+        AndroidElement password = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/login_password");
         password.sendKeys(Configuration.password);
         AndroidElement sign_in = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/login_login");
         sign_in.click();
         Thread.sleep(2000);
-        AndroidElement skip = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/btn_skip");
-        skip.click();
-        AndroidElement home = (AndroidElement) driver.findElementByXPath("//android.widget.ImageButton[@content-desc=\"Navigate up\"]");
-        home.click();
+
+        //search
         AndroidElement search = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/lbl_search");
         search.click();
         AndroidElement search_bar = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/edt_keyword_search");
         search_bar.sendKeys("aa\n");
-        //fails due to enter key not working
 
         //test
         AndroidElement item = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/home_location_item_image");
@@ -295,32 +268,7 @@ public class RepresentativeTests {
 
     @Test
     public void testAddCart() throws InterruptedException {
-        //transit
-        AndroidElement signin_jump = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.Button[2]");
-        signin_jump.click();
-        Thread.sleep(1000);
-        AndroidElement email =  (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/TextInputLayout[1]/android.widget.FrameLayout/android.widget.EditText");
-        email.sendKeys(Configuration.email);
-        AndroidElement password = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/TextInputLayout[2]/android.widget.FrameLayout/android.widget.EditText");
-        password.sendKeys(Configuration.password);
-        AndroidElement sign_in = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/login_login");
-        sign_in.click();
-        Thread.sleep(2000);
-        AndroidElement skip = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/btn_skip");
-        skip.click();
-        AndroidElement home = (AndroidElement) driver.findElementByXPath("//android.widget.ImageButton[@content-desc=\"Navigate up\"]");
-        home.click();
-        AndroidElement search = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/lbl_search");
-        search.click();
-        AndroidElement search_bar = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/edt_keyword_search");
-        search_bar.sendKeys("aa\n");
-        //fails due to enter key not working
-        AndroidElement item = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/home_location_item_image");
-        item.click();
-
-        //test
-        AndroidElement add_cart = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/btn_make_offer");
-        add_cart.click();
+        //no cart
     }
 
     @Test
@@ -329,27 +277,50 @@ public class RepresentativeTests {
     }
 
     @Test
-    public void testTerms() throws InterruptedException {
-        //transit
-        AndroidElement signin_jump = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.Button[2]");
+    public void testAddress() throws InterruptedException {
+        //sign in
+        AndroidElement signin_jump = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/sign_in");
         signin_jump.click();
         Thread.sleep(1000);
-        AndroidElement email =  (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/TextInputLayout[1]/android.widget.FrameLayout/android.widget.EditText");
+        AndroidElement email =  (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/login_email");
         email.sendKeys(Configuration.email);
-        AndroidElement password = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/TextInputLayout[2]/android.widget.FrameLayout/android.widget.EditText");
+        AndroidElement password = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/login_password");
         password.sendKeys(Configuration.password);
         AndroidElement sign_in = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/login_login");
         sign_in.click();
         Thread.sleep(2000);
-        AndroidElement skip = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/btn_skip");
-        skip.click();
-        AndroidElement home = (AndroidElement) driver.findElementByXPath("//android.widget.ImageButton[@content-desc=\"Navigate up\"]");
-        home.click();
+
+        AndroidElement account = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/main_tab_profile");
+        account.click();
+        AndroidElement profile = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/profile_edit_profile");
+        profile.click();
+
+        AndroidElement address = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/my_profile_shipping_address");
+        address.click();
+        AndroidElement add_address = (AndroidElement) driver.findElementByXPath("//android.view.View[@text=\"Add new address\"]");
+        add_address.click();
+
+        //adding address is a WebView
+    }
+
+    @Test
+    public void testTerms() throws InterruptedException {
+        //sign in
+        AndroidElement signin_jump = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/sign_in");
+        signin_jump.click();
+        Thread.sleep(1000);
+        AndroidElement email =  (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/login_email");
+        email.sendKeys(Configuration.email);
+        AndroidElement password = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/login_password");
+        password.sendKeys(Configuration.password);
+        AndroidElement sign_in = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/login_login");
+        sign_in.click();
+        Thread.sleep(2000);
+
         AndroidElement account = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/main_tab_profile");
         account.click();
         AndroidElement settings = (AndroidElement) driver.findElementById("com.thirdrock.fivemiles:id/profile_setting");
         settings.click();
-        //fails due to verification popup
 
         //test
         AndroidElement legal = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.LinearLayout[4]");

@@ -54,14 +54,15 @@ public class RepresentativeTests {
         Thread.sleep(5000);
 
         //test
-        AndroidElement email =  (AndroidElement) driver.findElementByXPath("//android.widget.EditText[@content-desc=\"Email\"]");
-        email.sendKeys(Configuration.email);
-        Thread.sleep(7000);
-        AndroidElement password = (AndroidElement) driver.findElementByXPath("//android.webkit.WebView[@content-desc=\"6pm Sign-In\"]/android.view.View[2]/android.view.View[5]/android.widget.EditText");
-        password.sendKeys(Configuration.password);
-        Thread.sleep(7000);
-        AndroidElement sign_in = (AndroidElement) driver.findElementByXPath("//android.widget.Button[@content-desc=\" Sign-In \"]");
-        sign_in.click();
+//        AndroidElement email =  (AndroidElement) driver.findElementByXPath("//android.widget.EditText[@content-desc=\"Email\"]");
+//        email.sendKeys(Configuration.email);
+//        Thread.sleep(7000);
+//        AndroidElement password = (AndroidElement) driver.findElementByXPath("//android.webkit.WebView[@content-desc=\"6pm Sign-In\"]/android.view.View[2]/android.view.View[5]/android.widget.EditText");
+//        password.sendKeys(Configuration.password);
+//        Thread.sleep(7000);
+//        AndroidElement sign_in = (AndroidElement) driver.findElementByXPath("//android.widget.Button[@content-desc=\"Sign-In\"]");
+//        sign_in.click();
+        //WebView
     }
 
     @Test
@@ -76,16 +77,16 @@ public class RepresentativeTests {
         sign_up_jump.click();
 
         //test
-        AndroidElement email = (AndroidElement) driver.findElementByXPath("//android.widget.EditText[@content-desc=\"Your email address\"]");
+        AndroidElement username = (AndroidElement) driver.findElementById("ap_customer_name");
+        username.sendKeys(Configuration.name);
+        Thread.sleep(7000);
+        AndroidElement email = (AndroidElement) driver.findElementById("ap_email");
         email.sendKeys(Configuration.email);
         Thread.sleep(7000);
-        AndroidElement username = (AndroidElement) driver.findElementByXPath("//android.widget.EditText[@content-desc=\"Name\"]");
-        username.sendKeys("aaa");
+        AndroidElement password = (AndroidElement) driver.findElementById("ap_password");
+        password.sendKeys(Configuration.password);
         Thread.sleep(7000);
-        AndroidElement password = (AndroidElement) driver.findElementByXPath("//android.webkit.WebView[@content-desc=\"6pm Registration\"]/android.view.View[3]/android.view.View[5]/android.widget.EditText");
-        password.sendKeys("bbb");
-        Thread.sleep(7000);
-        AndroidElement sign_up = (AndroidElement) driver.findElementByXPath("//android.widget.Button[@content-desc=\" Create your 6pm account \"]");
+        AndroidElement sign_up = (AndroidElement) driver.findElementByXPath("//android.widget.Button[@content-desc=\"Create your 6pm account\"]");
         sign_up.click();
     }
 
@@ -103,22 +104,28 @@ public class RepresentativeTests {
     }
 
     @Test
-    public void testAddress() throws InterruptedException {
-        //transit
+    public void testAccount() throws InterruptedException {
         AndroidElement menu = (AndroidElement) driver.findElementByXPath("//android.widget.ImageButton[@content-desc=\"Open navigation drawer\"]");
         menu.click();
-        AndroidElement menu_account = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout[1]/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/androidx.appcompat.widget.LinearLayoutCompat[3]");
-        menu_account.click();
-        Thread.sleep(5000);
+        AndroidElement account = (AndroidElement) driver.findElementByXPath("//android.widget.CheckedTextView[@text=\"Account\"]");
+        account.click();
+    }
 
-        //test
+    @Test
+    public void testAddress() throws InterruptedException {
+        //sign in
+        AndroidElement menu = (AndroidElement) driver.findElementByXPath("//android.widget.ImageButton[@content-desc=\"Open navigation drawer\"]");
+        menu.click();
+        AndroidElement menu_signin = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout[1]/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/androidx.appcompat.widget.LinearLayoutCompat[3]");
+        menu_signin.click();
+        Thread.sleep(5000);
         AndroidElement email =  (AndroidElement) driver.findElementByXPath("//android.widget.EditText[@content-desc=\"Email\"]");
         email.sendKeys(Configuration.email);
-        Thread.sleep(15000);
+        Thread.sleep(7000);
         AndroidElement password = (AndroidElement) driver.findElementByXPath("//android.webkit.WebView[@content-desc=\"6pm Sign-In\"]/android.view.View[2]/android.view.View[5]/android.widget.EditText");
         password.sendKeys(Configuration.password);
         Thread.sleep(7000);
-        AndroidElement sign_in = (AndroidElement) driver.findElementByXPath("//android.widget.Button[@content-desc=\" Sign-In \"]");
+        AndroidElement sign_in = (AndroidElement) driver.findElementByXPath("//android.widget.Button[@content-desc=\"Sign-In\"]");
         sign_in.click();
 
         //test
@@ -126,8 +133,19 @@ public class RepresentativeTests {
         address.click();
         AndroidElement add =  (AndroidElement) driver.findElementById("com.zappos.android.sixpmFlavor:id/generic_add_to_fab");
         add.click();
+
+        AndroidElement phone = (AndroidElement) driver.findElementById("com.zappos.android.sixpmFlavor:id/add_update_shipping_address_address_phone");
+        phone.sendKeys(Configuration.phone);
         AndroidElement street =  (AndroidElement) driver.findElementById("com.zappos.android.sixpmFlavor:id/add_update_shipping_address_address_line_1");
-        street.sendKeys("941 Bloom Walk");
+        street.sendKeys(Configuration.street);
+        AndroidElement zip = (AndroidElement) driver.findElementById("com.zappos.android.sixpmFlavor:id/add_update_shipping_address_address_zip");
+        zip.sendKeys(Configuration.zip);
+        AndroidElement city = (AndroidElement) driver.findElementById("com.zappos.android.sixpmFlavor:id/add_update_shipping_address_address_city");
+        city.sendKeys(Configuration.city);
+        AndroidElement state_spinner = (AndroidElement) driver.findElementById("com.zappos.android.sixpmFlavor:id/add_update_shipping_address_address_state_spinner");
+        state_spinner.click();
+        AndroidElement state = (AndroidElement) driver.findElementById("android:id/text1");
+        state.click();
         AndroidElement save =  (AndroidElement) driver.findElementById("com.zappos.android.sixpmFlavor:id/add_update_save_btn");
         save.click();
     }
@@ -164,7 +182,7 @@ public class RepresentativeTests {
         settings.click();
 
         //test
-        AndroidElement help = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[8]/android.widget.RelativeLayout");
+        AndroidElement help = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[9]/android.widget.RelativeLayout");
         help.click();
     }
 
@@ -257,6 +275,8 @@ public class RepresentativeTests {
         cart.click();
         AndroidElement remove = (AndroidElement) driver.findElementById("com.zappos.android.sixpmFlavor:id/menu_remove_all");
         remove.click();
+        AndroidElement remove_confirm = (AndroidElement) driver.findElementById("android:id/button1");
+        remove_confirm.click();
     }
 
     @Test
@@ -268,9 +288,9 @@ public class RepresentativeTests {
         settings.click();
 
         //test
-        AndroidElement more = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[9]/android.widget.RelativeLayout");
+        AndroidElement more = (AndroidElement) driver.findElementByXPath("//android.widget.TextView[@text=\"More Info\"]");
         more.click();
-        AndroidElement legal = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[8]/android.widget.RelativeLayout");
+        AndroidElement legal = (AndroidElement) driver.findElementByXPath("//android.widget.TextView[@text=\"Terms of Use\"]");
         legal.click();
     }
 

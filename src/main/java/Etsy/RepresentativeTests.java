@@ -1,6 +1,6 @@
 package Etsy;
 
-import global.HelperClass;
+
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 
@@ -210,6 +210,11 @@ public class RepresentativeTests {
     }
 
     @Test
+    public void testAddress(){
+        //no address
+    }
+
+    @Test
     public void testAddCart() throws InterruptedException {
         //transit
         AndroidElement search = (AndroidElement) driver.findElementById("com.etsy.android:id/menu_search");
@@ -219,7 +224,8 @@ public class RepresentativeTests {
         Thread.sleep(1000);
         AndroidElement item = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.support.v4.widget.DrawerLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.support.v7.widget.RecyclerView/android.widget.FrameLayout[3]/android.view.ViewGroup/android.widget.ImageView[1]");
         item.click();
-
+        AndroidElement cart = (AndroidElement) driver.findElementById("com.etsy.android:id/cart_icon");
+        cart.click();
         //test
         AndroidElement add_cart = (AndroidElement) driver.findElementById("com.etsy.android:id/button_cart");
         add_cart.click();
