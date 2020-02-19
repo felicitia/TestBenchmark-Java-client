@@ -3,3 +3,6 @@ Configuration.java
 *.class
 .DS_Store
 /target/
+.settings
+.classpath
+.project
