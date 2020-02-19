@@ -30,4 +30,84 @@ public class RepresentativeTests {
       capabilities.setCapability("appActivity", ACTIVITY);
       driver = new AndroidDriver<WebElement>(new URL(SERVER), capabilities);
   }
+
+  @AfterClass
+  public void tearDown() {
+      driver.quit();
+  }
+
+  @BeforeMethod
+  public void reset() {
+      driver.resetApp();
+  }
+
+  @Test
+  public void testSignIn() {
+
+  }
+
+  @Test
+  public void testSignUp() {
+
+  }
+
+  @Test
+  public void testSearch() {
+
+  }
+
+  @Test
+  public void testDetail() {
+
+  }
+
+  @Test
+  public void testAddBookmark() {
+
+  }
+
+  @Test
+  public void testRemoveBookmark() {
+
+  }
+
+  @Test
+  public void testAccount() {
+
+  }
+
+  @Test
+  public void testTextSize() {
+
+  }
+
+  @Test
+  public void testAbout() {
+
+  }
+
+  @Test
+  public void testCategory() {
+
+  }
+
+  @Test
+  public void testContact() {
+
+  }
+
+  @Test
+  public void testHelp() {
+
+  }
+
+  @Test
+  public void testMenu() {
+
+  }
+
+  @Test
+  public void testTerms() {
+
+  }
 }
