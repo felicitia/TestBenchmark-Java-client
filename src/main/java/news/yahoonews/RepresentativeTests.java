@@ -15,8 +15,8 @@ import java.net.URL;
 public class RepresentativeTests {
 
   private AndroidDriver<WebElement> driver;
-  private final String ACTIVITY = "";
-  private final String PACKAGE = "";
+  private final String ACTIVITY = "com.yahoo.homerun.streams.presentation.view.activity.MainNavigationActivity";
+  private final String PACKAGE = "com.yahoo.mobile.client.android.yahoo";
   private final String DEVICE = "LMG820QM2a5f3a88";
   private final String PLATFORM = "android";
   private final String SERVER = "http://localhost:4723";
