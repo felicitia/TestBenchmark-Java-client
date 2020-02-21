@@ -214,30 +214,6 @@ public class RepresentativeTests {
     //activity .feature.article.ArticleActivity
     AndroidElement save_bookmark = (AndroidElement) driver.findElementById("com.guardian:id/bSavePage");
     save_bookmark.click();
-    //class android.widget.ImageView
-    //activity .feature.article.ArticleActivity
-    back = (AndroidElement) driver.findElementById("com.guardian:id/bBack");
-    back.click();
-    //class android.widget.ImageView
-    //activity .feature.search.SearchActivity
-    back = (AndroidElement) driver.findElementById("com.guardian:id/actionbar_home_button");
-    back.click();
-    //class android.widget.ImageView
-    //activity .feature.search.SearchActivity
-    back = (AndroidElement) driver.findElementById("com.guardian:id/ivBackButton");
-    back.click();
-    //class android.widget.ImageButton
-    //activity .feature.stream.NewHomeActivity
-    menu.click();
-    //class android.widget.ImageView
-    //activity .feature.stream.NewHomeActivity
-    AndroidElement menu_more = (AndroidElement) driver.findElementById("com.guardian:id/show_more");
-    menu_more.click();
-    //class android.widget.ImageView
-    //activity .feature.stream.NewHomeActivity
-    AndroidElement menu_bookmark = (AndroidElement) driver.findElementById("com.guardian:id/sfl_button");
-    menu_bookmark.click();
-    //activity .feature.stream.NewHomeActivity
   }
 
   @Test
@@ -315,6 +291,10 @@ public class RepresentativeTests {
     //activity .feature.article.ArticleActivity
     AndroidElement menu_textsize = (AndroidElement) driver.findElementById("com.guardian:id/bTextSize");
     menu_textsize.click();
+    //class android.widget.Button
+    //activity .feature.article.ArticleActivity
+    AndroidElement change_textsize = (AndroidElement) driver.findElementById("com.guardian:id/bOk");
+    change_textsize.click();
     //activity .feature.article.ArticleActivity
     //incomplete test case: uses seekbar
   }
@@ -346,14 +326,6 @@ public class RepresentativeTests {
     //activity .feature.stream.NewHomeActivity
     AndroidElement cat_1 = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout[2]/android.widget.RelativeLayout/androidx.recyclerview.widget.RecyclerView/android.widget.TextView[2]");
     cat_1.click();
-    //class android.widget.ImageButton
-    //activity .feature.stream.NewHomeActivity
-    menu.click();
-    //class android.widget.TextView
-    //activity .feature.stream.NewHomeActivity
-    AndroidElement cat_2 = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout[2]/android.widget.RelativeLayout/androidx.recyclerview.widget.RecyclerView/android.widget.TextView[3]");
-    cat_2.click();
-    //activity .feature.stream.NewHomeActivity
   }
 
   @Test
