@@ -15,7 +15,7 @@ import java.net.URL;
 public class RepresentativeTests {
 
   private AndroidDriver<WebElement> driver;
-  private final String ACTIVITY = "com.abc.abcnews.p020ui.StartActivity";
+  private final String ACTIVITY = "com.abc.abcnews.ui.StartActivity";
   private final String PACKAGE = "com.abc.abcnews";
   private final String DEVICE = "LMG820QM2a5f3a88";
   private final String PLATFORM = "android";

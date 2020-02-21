@@ -15,7 +15,7 @@ import java.net.URL;
 public class RepresentativeTests {
 
   private AndroidDriver<WebElement> driver;
-  private final String ACTIVITY = "bbc.mobile.news.p010v3.app.TopLevelActivity";
+  private final String ACTIVITY = "bbc.mobile.news.v3.app.TopLevelActivity";
   private final String PACKAGE = "bbc.mobile.news.ww";
   private final String DEVICE = "LMG820QM2a5f3a88";
   private final String PLATFORM = "android";

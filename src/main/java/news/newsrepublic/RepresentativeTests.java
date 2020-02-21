@@ -15,7 +15,7 @@ import java.net.URL;
 public class RepresentativeTests {
 
   private AndroidDriver<WebElement> driver;
-  private final String ACTIVITY = "com.p240ss.android.application.app.mainpage.BottomTabMainActivity";
+  private final String ACTIVITY = "com.ss.android.application.app.mainpage.BottomTabMainActivity";
   private final String PACKAGE = "com.mobilesrepublic.appy";
   private final String DEVICE = "LMG820QM2a5f3a88";
   private final String PLATFORM = "android";

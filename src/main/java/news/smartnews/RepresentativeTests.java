@@ -15,7 +15,7 @@ import java.net.URL;
 public class RepresentativeTests {
 
   private AndroidDriver<WebElement> driver;
-  private final String ACTIVITY = "p196jp.gocro.smartnews.android.activity.SmartNewsActivity";
+  private final String ACTIVITY = "jp.gocro.smartnews.android.activity.SmartNewsActivity";
   private final String PACKAGE = "jp.gocro.smartnews.android";
   private final String DEVICE = "LMG820QM2a5f3a88";
   private final String PLATFORM = "android";

@@ -15,7 +15,7 @@ import java.net.URL;
 public class RepresentativeTests {
 
   private AndroidDriver<WebElement> driver;
-  private final String ACTIVITY = "com.aol.mobile.aolapp.p037ui.activity.SplashScreenActivity";
+  private final String ACTIVITY = "com.aol.mobile.aolapp.ui.activity.SplashScreenActivity";
   private final String PACKAGE = "com.aol.mobile.aolapp";
   private final String DEVICE = "LMG820QM2a5f3a88";
   private final String PLATFORM = "android";
