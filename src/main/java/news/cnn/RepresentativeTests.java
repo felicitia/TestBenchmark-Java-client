@@ -41,73 +41,141 @@ public class RepresentativeTests {
       driver.resetApp();
   }
 
-  @Test
-  public void testSignIn() {
+  // @Test
+  // public void testSignIn() {
+  //   //functionality not present
+  // }
 
-  }
+  // @Test
+  // public void testSignUp() {
+  //   //functionality not present
+  // }
 
-  @Test
-  public void testSignUp() {
-
-  }
-
-  @Test
-  public void testSearch() {
-
-  }
+  // @Test
+  // public void testSearch() {
+  //   // //class android.widget.FrameLayout
+  //   // //activity .features.main.MainActivity
+  //   // AndroidElement tosearch = (AndroidElement) driver.findElementById("com.cnn.mobile.android.phone:id/search_item_menu");
+  //   // tosearch.click();
+  //   // //class android.widget.EditText
+  //   // //activity .features.main.MainActivity
+  //   // AndroidElement search_bar = (AndroidElement) driver.findElementByXPath("//android.view.ViewGroup[@content-desc=\" search text input\"]/android.widget.EditText");
+  //   // search_bar.sendKeys("llama\n");
+  //   // //enter key doesn't work
+  // }
 
   @Test
   public void testDetail() {
-
+    //class android.widget.FrameLayout
+    //activity .features.main.MainActivity
+    AndroidElement item_1 = (AndroidElement) driver.findElementById("com.cnn.mobile.android.phone:id/card_view");
+    item_1.click();
+    //activity .features.main.MainActivity
   }
 
   @Test
   public void testAddBookmark() {
-
+    //class android.widget.FrameLayout
+    //activity .features.main.MainActivity
+    AndroidElement item_1 = (AndroidElement) driver.findElementById("com.cnn.mobile.android.phone:id/card_view");
+    item_1.click();
+    //class android.widget.Button
+    //activity .features.main.MainActivity
+    AndroidElement save_bookmark = (AndroidElement) driver.findElementById("com.cnn.mobile.android.phone:id/toolbar_save");
+    save_bookmark.click();
+    //activity .features.main.MainActivity
   }
 
   @Test
   public void testRemoveBookmark() {
-
+    //class android.widget.FrameLayout
+    //activity .features.main.MainActivity
+    AndroidElement menu_bookmark = (AndroidElement) driver.findElementById("com.cnn.mobile.android.phone:id/saved_story_item_menu");
+    menu_bookmark.click();
+    //class android.widget.ImageButton
+    //activity .features.main.MainActivity
+    AndroidElement remove_bookmark = (AndroidElement) driver.findElementById("com.cnn.mobile.android.phone:id/deleteButton");
+    remove_bookmark.click();
+    //activity .features.main.MainActivity
   }
 
   @Test
   public void testAccount() {
-
+    //class android.widget.FrameLayout
+    //activity .features.main.MainActivity
+    AndroidElement menu = (AndroidElement) driver.findElementById("com.cnn.mobile.android.phone:id/settings_item_menu");
+    menu.click();
+    //class android.widget.Button
+    //activity .features.main.MainActivity
+    AndroidElement menu_account = (AndroidElement) driver.findElementById("com.cnn.mobile.android.phone:id/tv_tv_login");
+    menu_account.click();
+    //activity .features.watch.authentication.legacy.TvePickerPrimaryListActivity
   }
 
-  @Test
-  public void testTextSize() {
+  // @Test
+  // public void testTextSize() {
+  //   //class android.widget.FrameLayout
+  //   //activity .features.main.MainActivity
+  //   AndroidElement menu = (AndroidElement) driver.findElementById("com.cnn.mobile.android.phone:id/settings_item_menu");
+  //   menu.click();
+  //   //class android.widget.LinearLayout
+  //   //activity .features.main.MainActivity
+  //   AndroidElement menu_textsize = (AndroidElement) driver.findElementById("com.cnn.mobile.android.phone:id/text_sizing_container");
+  //   menu_textsize.click();
+  //   //incomplete: uses strange unclickable elements for text size
+  // }
 
-  }
-
-  @Test
-  public void testAbout() {
-
-  }
+  // @Test
+  // public void testAbout() {
+  //   //functionality not present
+  // }
 
   @Test
   public void testCategory() {
-
+    //class androidx.appcompat.app.a$c
+    //activity .features.main.MainActivity
+    AndroidElement cat_1 = (AndroidElement) driver.findElementByXPath("//androidx.appcompat.app.a.c[@content-desc=\"World\"]");
+    cat_1.click();
+    //activity .features.main.MainActivity
   }
 
   @Test
   public void testContact() {
-
+    //class android.widget.FrameLayout
+    //activity .features.main.MainActivity
+    AndroidElement menu = (AndroidElement) driver.findElementById("com.cnn.mobile.android.phone:id/settings_item_menu");
+    menu.click();
+    //class android.widget.Button
+    //activity .features.main.MainActivity
+    AndroidElement contact = (AndroidElement) driver.findElementById("com.cnn.mobile.android.phone:id/tv_feedback_link");
+    contact.click();
+    //activity com.apptentive.android.sdk.ApptentiveViewActivity
   }
 
-  @Test
-  public void testHelp() {
-
-  }
+  // @Test
+  // public void testHelp() {
+  //   //functionality not present
+  // }
 
   @Test
   public void testMenu() {
-
+    //class android.widget.FrameLayout
+    //activity .features.main.MainActivity
+    AndroidElement menu = (AndroidElement) driver.findElementById("com.cnn.mobile.android.phone:id/settings_item_menu");
+    menu.click();
+    //activity .features.main.MainActivity
   }
 
   @Test
   public void testTerms() {
-
+    //class android.widget.FrameLayout
+    //activity .features.main.MainActivity
+    AndroidElement menu = (AndroidElement) driver.findElementById("com.cnn.mobile.android.phone:id/settings_item_menu");
+    menu.click();
+    //class android.widget.Button
+    //activity .features.main.MainActivity
+    AndroidElement legal = (AndroidElement) driver.findElementById("com.cnn.mobile.android.phone:id/tv_terms_conditions");
+    legal.click();
+    //activity .features.main.MainActivity
   }
 }
