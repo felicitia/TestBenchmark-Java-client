@@ -136,8 +136,22 @@ public class RepresentativeTests {
 
   @Test
   public void testRemoveBookmark() {
+
+
 	  AndroidElement menu_account = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/menu_user_profile_root");
 	  menu_account.click();
+
+	  AndroidElement signin_continue = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/signin");
+	  signin_continue.click();
+
+	  AndroidElement signin_email = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/usernameEditText");
+	  signin_email.sendKeys(Configuration.email);
+
+	  AndroidElement signin_password = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/passwordEditText");
+	  signin_password.sendKeys(Configuration.password);
+
+	  AndroidElement sign_in = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/loginButton");
+	  sign_in.click();
 	  
 	  AndroidElement menu_bookmark = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/design_menu_item_text");
 	  menu_bookmark.click();
@@ -168,16 +182,6 @@ public class RepresentativeTests {
   }
 
   @Test
-  public void testTextSize() {
-	  //cannot find this feature
-  }
-
-  @Test
-  public void testAbout() {
-	  //cannot find this feature
-  }
-
-  @Test
   public void testCategory() {
 	  AndroidElement menu = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/icon");
 	  menu.click();
@@ -194,15 +198,10 @@ public class RepresentativeTests {
 	  AndroidElement menu_settings = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/settings_button");
 	  menu_settings.click(); 
 	  
-	  AndroidElement contact = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[9]\r\n" + 
-	  		"");
+	  AndroidElement contact = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[9]");
 	  contact.click(); 
   }
 
-  @Test
-  public void testHelp() {
-	  //cannot find this feature
-  }
 
   @Test
   public void testMenu() {
@@ -218,8 +217,7 @@ public class RepresentativeTests {
 	  AndroidElement menu_settings = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/menu_settings");
 	  menu_settings.click(); 
 	  
-	  AndroidElement legal = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[9]\r\n" + 
-	  		"");
+	  AndroidElement legal = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[9]");
 	  legal.click();
   }
 }
