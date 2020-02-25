@@ -137,10 +137,6 @@ public class RepresentativeTests {
         cat.click();
     }
 
-    @Test
-    public void testContact() {
-        //no contact form??
-    }
 
     @Test
     public void testHelp() throws InterruptedException {
@@ -209,10 +205,6 @@ public class RepresentativeTests {
         item.click();
     }
 
-    @Test
-    public void testAddress(){
-        //no address
-    }
 
     @Test
     public void testAddCart() throws InterruptedException {

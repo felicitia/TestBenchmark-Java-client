@@ -223,11 +223,6 @@ public class RepresentativeTests {
         search_bar.sendKeys("aa\n");
     }
 
-    @Test
-    public void testFilter() throws InterruptedException{
-        // no filter after search
-
-    }
 
     @Test
     public void testDetail() throws InterruptedException {

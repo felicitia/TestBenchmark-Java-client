@@ -77,24 +77,6 @@ public class RepresentativeTests {
         sign_up.click();
     }
 
-    @Test
-    public void testAbout() throws InterruptedException {
-        //transit
-//        Thread.sleep(1000);
-//        AndroidElement email =  (AndroidElement) driver.findElementById("com.contextlogic.wish:id/sign_in_fragment_email_text");
-//        email.sendKeys(Configuration.email);
-//        AndroidElement password = (AndroidElement) driver.findElementById("com.contextlogic.wish:id/sign_in_fragment_password_text");
-//        password.sendKeys(Configuration.password);
-//        AndroidElement sign_in = (AndroidElement) driver.findElementById("com.contextlogic.wish:id/sign_in_fragment_sign_in_button");
-//        sign_in.click();
-//        Thread.sleep(5000);
-//        AndroidElement menu = (AndroidElement) driver.findElementByXPath("//android.widget.ImageButton[@content-desc=\"Open Menu\"]");
-//        menu.click();
-//
-//        //test
-//        AndroidElement about = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.support.v4.widget.DrawerLayout/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.support.v4.view.ViewPager/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout[3]/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.LinearLayout");
-//        about.click();
-    }
 
     @Test
     public void testAccount() throws InterruptedException {

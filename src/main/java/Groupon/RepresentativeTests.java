@@ -296,8 +296,4 @@ public class RepresentativeTests {
         legal.click();
     }
 
-    @Test
-    public void testAddress() {
-        //no address
-    }
 }

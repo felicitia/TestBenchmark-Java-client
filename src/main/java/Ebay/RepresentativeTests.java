@@ -99,11 +99,6 @@ public class RepresentativeTests {
         about.click();
     }
 
-    @Test
-    public void testAddress() throws InterruptedException {
-        //no address
-
-    }
 
     @Test
     public void testAccount() throws InterruptedException {
@@ -224,14 +219,6 @@ public class RepresentativeTests {
         add_cart.click();
     }
 
-    @Test
-    public void testCart() {
-        //test
-//        AndroidElement cart = (AndroidElement) driver.findElementById("com.ebay.mobile:id/action_view_icon");
-//        cart.click();
-
-        //cart actions require confirmed phone number
-    }
 
     @Test
     public void testTerms() {

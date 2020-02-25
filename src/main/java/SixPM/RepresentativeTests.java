@@ -44,26 +44,6 @@ public class RepresentativeTests {
         driver.resetApp();
     }
 
-    @Test
-    public void testSignIn() throws InterruptedException {
-        //transit
-        AndroidElement menu = (AndroidElement) driver.findElementByXPath("//android.widget.ImageButton[@content-desc=\"Open navigation drawer\"]");
-        menu.click();
-        AndroidElement menu_signin = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout[1]/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/androidx.appcompat.widget.LinearLayoutCompat[3]");
-        menu_signin.click();
-        Thread.sleep(5000);
-
-        //test
-//        AndroidElement email =  (AndroidElement) driver.findElementByXPath("//android.widget.EditText[@content-desc=\"Email\"]");
-//        email.sendKeys(Configuration.email);
-//        Thread.sleep(7000);
-//        AndroidElement password = (AndroidElement) driver.findElementByXPath("//android.webkit.WebView[@content-desc=\"6pm Sign-In\"]/android.view.View[2]/android.view.View[5]/android.widget.EditText");
-//        password.sendKeys(Configuration.password);
-//        Thread.sleep(7000);
-//        AndroidElement sign_in = (AndroidElement) driver.findElementByXPath("//android.widget.Button[@content-desc=\"Sign-In\"]");
-//        sign_in.click();
-        //WebView
-    }
 
     @Test
     public void testSignUp() throws InterruptedException {
@@ -73,7 +53,7 @@ public class RepresentativeTests {
         AndroidElement menu_signin = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout[1]/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/androidx.appcompat.widget.LinearLayoutCompat[3]");
         menu_signin.click();
         Thread.sleep(5000);
-        AndroidElement sign_up_jump = (AndroidElement) driver.findElementByXPath("//android.widget.Button[@content-desc=\"Create a new 6pm account\"]");
+        AndroidElement sign_up_jump = (AndroidElement) driver.findElementByXPath("//android.widget.Button[@text=\"Create a new 6pm account\"]");
         sign_up_jump.click();
 
         //test
@@ -86,7 +66,7 @@ public class RepresentativeTests {
         AndroidElement password = (AndroidElement) driver.findElementById("ap_password");
         password.sendKeys(Configuration.password);
         Thread.sleep(7000);
-        AndroidElement sign_up = (AndroidElement) driver.findElementByXPath("//android.widget.Button[@content-desc=\"Create your 6pm account\"]");
+        AndroidElement sign_up = (AndroidElement) driver.findElementByXPath("//android.widget.Button[@text=\"Create your 6pm account\"]");
         sign_up.click();
     }
 
