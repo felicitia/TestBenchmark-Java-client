@@ -93,7 +93,15 @@ public class RepresentativeTests {
 
   @Test
   public void testContact() {
-
+    //class android.widget.ImageView
+    //activity .ui.activity.MainActivity
+    AndroidElement menu = (AndroidElement) driver.findElementById("com.aol.mobile.aolapp:id/image");
+    menu.click();
+    //class android.widget.LinearLayout
+    //activity .ui.activity.SettingsActivity
+    AndroidElement contact = (AndroidElement) driver.findElementById("com.aol.mobile.aolapp:id/settings_help_feedback");
+    contact.click();
+    //activity com.uservoice.uservoicesdk.activity.ForumActivity
   }
 
   @Test
@@ -103,7 +111,11 @@ public class RepresentativeTests {
 
   @Test
   public void testMenu() {
-
+    //class android.widget.ImageView
+    //activity .ui.activity.MainActivity
+    AndroidElement menu = (AndroidElement) driver.findElementById("com.aol.mobile.aolapp:id/image");
+    menu.click();
+    //activity .ui.activity.SettingsActivity
   }
 
   @Test
