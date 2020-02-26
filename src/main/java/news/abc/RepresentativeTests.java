@@ -68,54 +68,73 @@ public class RepresentativeTests {
     //class android.widget.EditText
     //activity .ui.navigation.MainNavigationActivity
     AndroidElement search_bar = (AndroidElement) driver.findElementById("com.abc.abcnews:id/drawer_search");
-    search_bar.sendKeys("llama\n");
-    //class android.widget.LinearLayout
+    search_bar.sendKeys("sanders feels the heat\n");
     //activity .ui.SearchActivity
-    AndroidElement item_1 = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[1]");
-    item_1.click();
-    //activity .ui.videoPlaylist.VideoPlaylistActivity
   }
 
   @Test
   public void testDetail() {
-    //class android.view.View
+    //class android.widget.ImageButton
     //activity .ui.navigation.MainNavigationActivity
-    AndroidElement item_1 = (AndroidElement) driver.findElementById("com.abc.abcnews:id/cinematic_main_onclick");
+    AndroidElement menu = (AndroidElement) driver.findElementByXPath("//android.widget.ImageButton[@content-desc=\"Drawer Opened\"]");
+    menu.click();
+    //class android.widget.EditText
+    //activity .ui.navigation.MainNavigationActivity
+    AndroidElement search_bar = (AndroidElement) driver.findElementById("com.abc.abcnews:id/drawer_search");
+    search_bar.sendKeys("sanders feels the heat\n");
+    //class android.widget.LinearLayout
+    //activity .ui.SearchActivity
+    AndroidElement item_1 = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[1]");
     item_1.click();
-    //activity .ui.NewsItemPagerActivity
+    //activity .ui.NewsItemActivity
   }
 
   @Test
   public void testAddBookmark() {
-    //class android.view.View
+    //class android.widget.ImageButton
     //activity .ui.navigation.MainNavigationActivity
-    AndroidElement item_1 = (AndroidElement) driver.findElementById("com.abc.abcnews:id/cinematic_main_onclick");
+    AndroidElement menu = (AndroidElement) driver.findElementByXPath("//android.widget.ImageButton[@content-desc=\"Drawer Opened\"]");
+    menu.click();
+    //class android.widget.EditText
+    //activity .ui.navigation.MainNavigationActivity
+    AndroidElement search_bar = (AndroidElement) driver.findElementById("com.abc.abcnews:id/drawer_search");
+    search_bar.sendKeys("sanders feels the heat\n");
+    //class android.widget.LinearLayout
+    //activity .ui.SearchActivity
+    AndroidElement item_1 = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[1]");
     item_1.click();
     //class android.widget.TextView
-    //activity .ui.NewsItemPagerActivity
+    //activity .ui.NewsItemActivity
     AndroidElement save_bookmark = (AndroidElement) driver.findElementById("com.abc.abcnews:id/menu_save_button");
     save_bookmark.click();
-    //activity .ui.NewsItemPagerActivity
+    //activity .ui.NewsItemActivity
   }
 
   @Test
   public void testRemoveBookmark() {
-    //class android.view.View
+    //class android.widget.ImageButton
     //activity .ui.navigation.MainNavigationActivity
-    AndroidElement item_1 = (AndroidElement) driver.findElementById("com.abc.abcnews:id/cinematic_main_onclick");
+    AndroidElement menu = (AndroidElement) driver.findElementByXPath("//android.widget.ImageButton[@content-desc=\"Drawer Opened\"]");
+    menu.click();
+    //class android.widget.EditText
+    //activity .ui.navigation.MainNavigationActivity
+    AndroidElement search_bar = (AndroidElement) driver.findElementById("com.abc.abcnews:id/drawer_search");
+    search_bar.sendKeys("sanders feels the heat\n");
+    //class android.widget.LinearLayout
+    //activity .ui.SearchActivity
+    AndroidElement item_1 = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[1]");
     item_1.click();
     //class android.widget.TextView
-    //activity .ui.NewsItemPagerActivity
+    //activity .ui.NewsItemActivity
     AndroidElement save_bookmark = (AndroidElement) driver.findElementById("com.abc.abcnews:id/menu_save_button");
     save_bookmark.click();
     //class android.widget.ImageButton
-    //activity .ui.NewsItemPagerActivity
+    //activity .ui.NewsItemActivity
     AndroidElement back = (AndroidElement) driver.findElementByXPath("//android.widget.ImageButton[@content-desc=\"Navigate up\"]");
     back.click();
 
     //class android.widget.ImageButton
     //activity .ui.navigation.MainNavigationActivity
-    AndroidElement menu = (AndroidElement) driver.findElementByXPath("//android.widget.ImageButton[@content-desc=\"Drawer Opened\"]");
     menu.click();
     //class android.view.ViewGroup
     //activity .ui.navigation.MainNavigationActivity
