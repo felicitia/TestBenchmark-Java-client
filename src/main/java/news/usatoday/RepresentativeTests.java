@@ -51,18 +51,22 @@ public class RepresentativeTests {
   //   //functionality not present
   // }
 
-  // @Test
-  // public void testSearch() {
-  //   //class android.widget.TextView
-  //   //activity com.gannett.android.news.ui.activity.ActivityNavigation
-  //   AndroidElement tosearch = (AndroidElement) driver.findElementById("com.usatoday.android.news:id/search_the_app");
-  //   tosearch.click();
-  //   //class android.widget.EditText
-  //   //activity com.gannett.android.news.ui.activity.ActivityNavigation
-  //   AndroidElement search_bar = (AndroidElement) driver.findElementById("com.usatoday.android.news:id/edit_text_search");
-  //   search_bar.sendKeys("llama\n");
-  //   //enter does not work with \n, abort
-  // }
+  @Test
+  public void testSearch() {
+    //class android.widget.TextView
+    //activity com.gannett.android.news.ui.activity.ActivityNavigation
+    AndroidElement tosearch = (AndroidElement) driver.findElementById("com.usatoday.android.news:id/search_the_app");
+    tosearch.click();
+    //class android.widget.EditText
+    //activity com.gannett.android.news.ui.activity.ActivityNavigation
+    AndroidElement search_bar = (AndroidElement) driver.findElementById("com.usatoday.android.news:id/edit_text_search");
+    search_bar.sendKeys("llama\n");
+    //class android.widget.FrameLayout
+    //activity com.gannett.android.news.ui.activity.ActivityNavigation
+    AndroidElement item_1 = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[1]");
+    item_1.click();
+    //activity com.gannett.android.news.ui.activity.ActivityStandaloneNews
+  }
 
   @Test
   public void testDetail() {

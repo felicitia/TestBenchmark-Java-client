@@ -51,18 +51,22 @@ public class RepresentativeTests {
   //   //functionality not present
   // }
 
-  // @Test
-  // public void testSearch() {
-  //   // //class android.widget.FrameLayout
-  //   // //activity .features.main.MainActivity
-  //   // AndroidElement tosearch = (AndroidElement) driver.findElementById("com.cnn.mobile.android.phone:id/search_item_menu");
-  //   // tosearch.click();
-  //   // //class android.widget.EditText
-  //   // //activity .features.main.MainActivity
-  //   // AndroidElement search_bar = (AndroidElement) driver.findElementByXPath("//android.view.ViewGroup[@content-desc=\" search text input\"]/android.widget.EditText");
-  //   // search_bar.sendKeys("llama\n");
-  //   // //enter key doesn't work
-  // }
+  @Test
+  public void testSearch() {
+    //class android.widget.FrameLayout
+    //activity .features.main.MainActivity
+    AndroidElement tosearch = (AndroidElement) driver.findElementById("com.cnn.mobile.android.phone:id/search_item_menu");
+    tosearch.click();
+    //class android.widget.EditText
+    //activity .features.main.MainActivity
+    AndroidElement search_bar = (AndroidElement) driver.findElementByXPath("//android.view.ViewGroup[@content-desc=\" search text input\"]/android.widget.EditText");
+    search_bar.sendKeys("llama\n");
+    //class android.view.ViewGroup
+    //activity .features.main.MainActivity
+    AndroidElement item_1 = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout[1]/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]");
+    item_1.click();
+    //activity .features.main.MainActivity
+  }
 
   @Test
   public void testDetail() {

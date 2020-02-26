@@ -59,18 +59,22 @@ public class RepresentativeTests {
   //   //pop not detected by appium, abort
   // }
 
-  // @Test
-  // public void testSearch() {
-  //   //class android.widget.ImageButton
-  //   //activity .ui.navigation.MainNavigationActivity
-  //   AndroidElement menu = (AndroidElement) driver.findElementByXPath("//android.widget.ImageButton[@content-desc=\"Drawer Opened\"]");
-  //   menu.click();
-  //   //class android.widget.EditText
-  //   //activity .ui.navigation.MainNavigationActivity
-  //   AndroidElement search_bar = (AndroidElement) driver.findElementById("com.abc.abcnews:id/drawer_search");
-  //   search_bar.sendKeys("llama\n");
-  //   //couldn't finish because \n doesn't work
-  // }
+  @Test
+  public void testSearch() {
+    //class android.widget.ImageButton
+    //activity .ui.navigation.MainNavigationActivity
+    AndroidElement menu = (AndroidElement) driver.findElementByXPath("//android.widget.ImageButton[@content-desc=\"Drawer Opened\"]");
+    menu.click();
+    //class android.widget.EditText
+    //activity .ui.navigation.MainNavigationActivity
+    AndroidElement search_bar = (AndroidElement) driver.findElementById("com.abc.abcnews:id/drawer_search");
+    search_bar.sendKeys("llama\n");
+    //class android.widget.LinearLayout
+    //activity .ui.SearchActivity
+    AndroidElement item_1 = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[1]");
+    item_1.click();
+    //activity .ui.videoPlaylist.VideoPlaylistActivity
+  }
 
   @Test
   public void testDetail() {
