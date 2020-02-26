@@ -90,6 +90,18 @@ public class RepresentativeTests {
   public void testRemoveBookmark() {
     //class android.widget.FrameLayout
     //activity .features.main.MainActivity
+    AndroidElement item_1 = (AndroidElement) driver.findElementById("com.cnn.mobile.android.phone:id/card_view");
+    item_1.click();
+    //class android.widget.Button
+    //activity .features.main.MainActivity
+    AndroidElement save_bookmark = (AndroidElement) driver.findElementById("com.cnn.mobile.android.phone:id/toolbar_save");
+    save_bookmark.click();
+    //class android.widget.FrameLayout
+    //activity .features.main.MainActivity
+    AndroidElement back = (AndroidElement) driver.findElementById("com.cnn.mobile.android.phone:id/toolbar_back_button_container");
+    back.click();
+    //class android.widget.FrameLayout
+    //activity .features.main.MainActivity
     AndroidElement menu_bookmark = (AndroidElement) driver.findElementById("com.cnn.mobile.android.phone:id/saved_story_item_menu");
     menu_bookmark.click();
     //class android.widget.ImageButton

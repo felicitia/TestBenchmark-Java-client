@@ -249,6 +249,41 @@ public class RepresentativeTests {
     //class android.widget.ImageButton
     //activity .feature.stream.NewHomeActivity
     menu.click();
+    //class android.view.ViewGroup
+    //activity .feature.stream.NewHomeActivity
+    AndroidElement tosearch = (AndroidElement) driver.findElementById("com.guardian:id/clSearchBox");
+    tosearch.click();
+    //class android.widget.EditText
+    //activity .feature.search.SearchActivity
+    AndroidElement search_bar = (AndroidElement) driver.findElementById("com.guardian:id/etInput");
+    search_bar.sendKeys(Configuration.search);
+    //class android.widget.TextView
+    //activity .feature.search.SearchActivity
+    AndroidElement search = (AndroidElement) driver.findElementById("com.guardian:id/search_footer_text_view");
+    search.click();
+    //class android.widget.LinearLayout
+    //activity .feature.search.SearchViewMoreActivity
+    AndroidElement item_1 = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[1]");
+    item_1.click();
+    //class android.widget.ImageView
+    //activity .feature.article.ArticleActivity
+    AndroidElement save_bookmark = (AndroidElement) driver.findElementById("com.guardian:id/bSavePage");
+    save_bookmark.click();
+    //class android.widget.ImageView
+    //activity .feature.article.ArticleActivity
+    back = (AndroidElement) driver.findElementById("com.guardian:id/bBack");
+    back.click();
+    //class android.widget.ImageView
+    //activity .feature.search.SearchViewMoreActivity
+    back = (AndroidElement) driver.findElementById("com.guardian:id/actionbar_home_button");
+    back.click();
+    //class android.widget.ImageView
+    //activity .feature.search.SearchActivity
+    back = (AndroidElement) driver.findElementById("com.guardian:id/ivBackButton");
+    back.click();
+    //class android.widget.ImageButton
+    //activity .feature.stream.NewHomeActivity
+    menu.click();
     //class android.widget.ImageView
     //activity .feature.stream.NewHomeActivity
     AndroidElement menu_more = (AndroidElement) driver.findElementById("com.guardian:id/show_more");

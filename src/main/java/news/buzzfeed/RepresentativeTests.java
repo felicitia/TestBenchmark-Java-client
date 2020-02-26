@@ -153,10 +153,26 @@ public class RepresentativeTests {
 	  AndroidElement sign_in = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/loginButton");
 	  sign_in.click();
 
+    AndroidElement tosearch = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/menu_search");
+	  tosearch.click();
+
+	  AndroidElement search_bar = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/search_plate");
+	  search_bar.sendKeys(Configuration.search+"\n");
+
+	  AndroidElement item_1 = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/post_card_text");
+	  item_1.click();
+
+	  AndroidElement save_bookmark = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/menu_bookmark");
+	  save_bookmark.click();
+
+    AndroidElement back = (AndroidElement) driver.findElementByXPath("//android.widget.ImageButton[@content-desc=\"Navigate up\"]");
+    back.click();
+    back.click();
+
 	  AndroidElement menu_bookmark = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/design_menu_item_text");
 	  menu_bookmark.click();
 
-	  AndroidElement item_1 = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/post_card_text");
+	  item_1 = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/post_card_text");
 	  item_1.click();
 
 	  AndroidElement remove_bookmark = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/menu_bookmark");

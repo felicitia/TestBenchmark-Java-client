@@ -108,6 +108,31 @@ public class RepresentativeTests {
 
   @Test
   public void testRemoveBookmark() {
+    //class android.widget.LinearLayout
+    //activity com.ss.android.application.app.mainpage.BottomTabMainActivity
+    AndroidElement tosearch = (AndroidElement) driver.findElementById("com.mobilesrepublic.appy:id/search_bar_layout");
+    tosearch.click();
+    //class android.widget.EditText
+    //activity com.ss.android.application.app.search.view.SearchActivity
+    AndroidElement search_bar = (AndroidElement) driver.findElementById("com.mobilesrepublic.appy:id/search_input");
+    search_bar.sendKeys("llama\n");
+    //class android.view.View
+    //activity com.ss.android.application.app.search.view.SearchActivity
+    AndroidElement item_1 = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/com.ss.android.uilib.base.page.slideback.SlideFrameLayout/android.widget.RelativeLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View[2]/android.view.View/android.widget.ListView/android.view.View[2]");
+    item_1.click();
+    //class android.widget.ImageView
+    //activity com.ss.android.application.article.detail.NewDetailActivity
+    AndroidElement menu_more = (AndroidElement) driver.findElementById("com.mobilesrepublic.appy:id/top_more_title");
+    menu_more.click();
+    //class android.view.ViewGroup
+    //activity com.ss.android.application.article.detail.NewDetailActivity
+    AndroidElement save_bookmark = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/androidx.recyclerview.widget.RecyclerView[2]/android.view.ViewGroup[1]");
+    save_bookmark.click();
+    //class android.widget.ImageView
+    //activity com.ss.android.application.article.detail.NewDetailActivity
+    AndroidElement back = (AndroidElement) driver.findElementById("com.mobilesrepublic.appy:id/back");
+    back.click();
+    back.click();
     //class android.widget.RelativeLayout
     //activity com.ss.android.application.app.mainpage.BottomTabMainActivity
     AndroidElement menu_account = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.RelativeLayout[4]");
@@ -122,11 +147,10 @@ public class RepresentativeTests {
     menu_bookmark.click();
     //class android.widget.RelativeLayout
     //activity com.ss.android.application.article.favor.FavoriteActivity
-    AndroidElement item_1 = (AndroidElement) driver.findElementById("com.mobilesrepublic.appy:id/root");
+    item_1 = (AndroidElement) driver.findElementById("com.mobilesrepublic.appy:id/root");
     item_1.click();
     //class android.widget.ImageView
     //activity com.ss.android.application.article.detail.NewDetailActivity
-    AndroidElement menu_more = (AndroidElement) driver.findElementById("com.mobilesrepublic.appy:id/top_more_title");
     menu_more.click();
     //class android.view.ViewGroup
     //activity com.ss.android.application.article.detail.NewDetailActivity
