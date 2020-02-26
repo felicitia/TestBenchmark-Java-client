@@ -294,8 +294,8 @@ public class RepresentativeTests {
     menu_bookmark.click();
     //class android.widget.LinearLayout
     //activity .feature.stream.NewHomeActivity
-    AndroidElement item_1 = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/androidx.viewpager.widget.ViewPager/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout");
-    item_1.click();
+    AndroidElement item_1_in_bookmark = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/androidx.viewpager.widget.ViewPager/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout");
+    item_1_in_bookmark.click();
     //class android.widget.ImageView
     //activity .feature.article.ArticleActivity
     AndroidElement remove_bookmark = (AndroidElement) driver.findElementById("com.guardian:id/bSavePage");
