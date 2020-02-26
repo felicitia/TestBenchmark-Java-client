@@ -80,13 +80,25 @@ public class RepresentativeTests {
 
   @Test
   public void testRemoveBookmark() {
+    //class android.view.ViewGroup
+    //activity .corenav.StartActivity
+    AndroidElement item_1 = (AndroidElement) driver.findElementById("com.foxnews.android:id/big_top_item_container");
+    item_1.click();
+    //class android.widget.ImageView
+    //activity .feature.articledetail.ArticleDetailActivity
+    AndroidElement save_bookmark = (AndroidElement) driver.findElementById("com.foxnews.android:id/save");
+    save_bookmark.click();
+    //class android.widget.ImageButton
+    //activity .feature.articledetail.ArticleDetailActivity
+    AndroidElement back = (AndroidElement) driver.findElementByXPath("//android.widget.ImageButton[@content-desc=\"Back\"]");
+    back.click();
     //class androidx.appcompat.widget.LinearLayoutCompat
     //activity .corenav.StartActivity
     AndroidElement menu_account = (AndroidElement) driver.findElementById("com.foxnews.android:id/navbar_for_you");
     menu_account.click();
     //class android.view.ViewGroup
     //activity .corenav.StartActivity
-    AndroidElement item_1 = (AndroidElement) driver.findElementById("com.foxnews.android:id/component_headline_item_container");
+    item_1 = (AndroidElement) driver.findElementById("com.foxnews.android:id/component_headline_item_container");
     item_1.click();
     //class android.widget.ImageView
     //activity .feature.articledetail.ArticleDetailActivity

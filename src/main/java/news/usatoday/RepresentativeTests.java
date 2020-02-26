@@ -90,11 +90,23 @@ public class RepresentativeTests {
   public void testRemoveBookmark() {
     //class android.widget.FrameLayout
     //activity com.gannett.android.news.ui.activity.ActivityNavigation
+    AndroidElement item_1 = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup[2]/android.widget.LinearLayout[2]/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[1]");
+    item_1.click();
+    //class android.widget.TextView
+    //activity com.gannett.android.news.ui.activity.ActivityArticle
+    AndroidElement save_bookmark = (AndroidElement) driver.findElementById("com.usatoday.android.news:id/menuButtonBookmark");
+    save_bookmark.click();
+    //class android.widget.ImageButton
+    //activity com.gannett.android.news.ui.activity.ActivityArticle
+    AndroidElement back = (AndroidElement) driver.findElementByXPath("//android.widget.ImageButton[@content-desc=\"Navigate up\"]");
+    back.click();
+    //class android.widget.FrameLayout
+    //activity com.gannett.android.news.ui.activity.ActivityNavigation
     AndroidElement menu_bookmark = (AndroidElement) driver.findElementById("com.usatoday.android.news:id/saved_articles_tab");
     menu_bookmark.click();
     //class android.widget.FrameLayout
     //activity com.gannett.android.news.ui.activity.ActivityNavigation
-    AndroidElement item_1 = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup[2]/android.widget.LinearLayout[2]/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout");
+    item_1 = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup[2]/android.widget.LinearLayout[2]/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout");
     item_1.click();
     //class android.widget.TextView
     //activity com.gannett.android.news.ui.activity.ActivityArticle

@@ -45,16 +45,16 @@ public class RepresentativeTests {
   public void testSignIn() {
 	  AndroidElement menu_account = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/menu_user_profile_root");
 	  menu_account.click();
-	  
-	  AndroidElement signin_continue = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/signin");
-	  signin_continue.click();
-	  
+
+	  AndroidElement signin_tosignin = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/signin");
+	  signin_tosignin.click();
+
 	  AndroidElement signin_email = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/usernameEditText");
 	  signin_email.sendKeys(Configuration.email);
-	  
+
 	  AndroidElement signin_password = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/passwordEditText");
 	  signin_password.sendKeys(Configuration.password);
-	  
+
 	  AndroidElement sign_in = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/loginButton");
 	  sign_in.click();
   }
@@ -63,22 +63,22 @@ public class RepresentativeTests {
   public void testSignUp() {
 	  AndroidElement menu_account = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/menu_user_profile_root");
 	  menu_account.click();
-	  
-	  AndroidElement signup_continue = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/emailSignUpButton");
-	  signup_continue.click();
-	  
+
+	  AndroidElement signin_tosignup = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/emailSignUpButton");
+	  signin_tosignup.click();
+
 	  AndroidElement signup_email = (AndroidElement) driver.findElementById("email");
 	  signup_email.sendKeys(Configuration.email);
-	  
+
 	  AndroidElement signup_password = (AndroidElement) driver.findElementById("pass");
 	  signup_password.sendKeys(Configuration.password);
-	  
+
 	  AndroidElement signup_confirm_password = (AndroidElement) driver.findElementById("re_enter_pass");
 	  signup_confirm_password.sendKeys(Configuration.password);
-	  
+
 	  AndroidElement signup_username = (AndroidElement) driver.findElementById("username");
 	  signup_username.sendKeys(Configuration.username);
-	  
+
 	  AndroidElement sign_up = (AndroidElement) driver.findElementById("signup");
 	  sign_up.click();
   }
@@ -87,19 +87,19 @@ public class RepresentativeTests {
   public void testSearch() {
 	  AndroidElement tosearch = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/menu_search");
 	  tosearch.click();
-	  
-	  AndroidElement search = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/search_bar");
-	  search.sendKeys(Configuration.search+"\n");
+
+	  AndroidElement search_bar = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/search_bar");
+	  search_bar.sendKeys(Configuration.search+"\n");
   }
 
   @Test
   public void testDetail() {
 	  AndroidElement tosearch = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/menu_search");
 	  tosearch.click();
-	  
-	  AndroidElement search = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/search_plate");
-	  search.sendKeys(Configuration.search+"\n");
-	  
+
+	  AndroidElement search_bar = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/search_plate");
+	  search_bar.sendKeys(Configuration.search+"\n");
+
 	  AndroidElement item_1 = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/post_card_text");
 	  item_1.click();
   }
@@ -108,28 +108,28 @@ public class RepresentativeTests {
   public void testAddBookmark() {
 	  AndroidElement menu_account = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/menu_user_profile_root");
 	  menu_account.click();
-	  
-	  AndroidElement signin_continue = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/signin");
-	  signin_continue.click();
-	  
+
+	  AndroidElement signin_tosignin = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/signin");
+	  signin_tosignin.click();
+
 	  AndroidElement signin_email = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/usernameEditText");
 	  signin_email.sendKeys(Configuration.email);
-	  
+
 	  AndroidElement signin_password = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/passwordEditText");
 	  signin_password.sendKeys(Configuration.password);
-	  
+
 	  AndroidElement sign_in = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/loginButton");
 	  sign_in.click();
-	  
+
 	  AndroidElement tosearch = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/menu_search");
 	  tosearch.click();
-	  
-	  AndroidElement search = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/search_plate");
-	  search.sendKeys(Configuration.search+"\n");
-	  
+
+	  AndroidElement search_bar = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/search_plate");
+	  search_bar.sendKeys(Configuration.search+"\n");
+
 	  AndroidElement item_1 = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/post_card_text");
 	  item_1.click();
-	  
+
 	  AndroidElement save_bookmark = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/menu_bookmark");
 	  save_bookmark.click();
   }
@@ -141,8 +141,8 @@ public class RepresentativeTests {
 	  AndroidElement menu_account = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/menu_user_profile_root");
 	  menu_account.click();
 
-	  AndroidElement signin_continue = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/signin");
-	  signin_continue.click();
+	  AndroidElement signin_tosignin = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/signin");
+	  signin_tosignin.click();
 
 	  AndroidElement signin_email = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/usernameEditText");
 	  signin_email.sendKeys(Configuration.email);
@@ -152,13 +152,29 @@ public class RepresentativeTests {
 
 	  AndroidElement sign_in = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/loginButton");
 	  sign_in.click();
-	  
-	  AndroidElement menu_bookmark = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/design_menu_item_text");
-	  menu_bookmark.click();
-	  
+
+    AndroidElement tosearch = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/menu_search");
+	  tosearch.click();
+
+	  AndroidElement search_bar = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/search_plate");
+	  search_bar.sendKeys(Configuration.search+"\n");
+
 	  AndroidElement item_1 = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/post_card_text");
 	  item_1.click();
-	  
+
+	  AndroidElement save_bookmark = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/menu_bookmark");
+	  save_bookmark.click();
+
+    AndroidElement back = (AndroidElement) driver.findElementByXPath("//android.widget.ImageButton[@content-desc=\"Navigate up\"]");
+    back.click();
+    back.click();
+
+	  AndroidElement menu_bookmark = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/design_menu_item_text");
+	  menu_bookmark.click();
+
+	  item_1 = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/post_card_text");
+	  item_1.click();
+
 	  AndroidElement remove_bookmark = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/menu_bookmark");
 	  remove_bookmark.click();
   }
@@ -167,25 +183,25 @@ public class RepresentativeTests {
   public void testAccount() {
 	  AndroidElement menu_account = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/menu_user_profile_root");
 	  menu_account.click();
-	  
-	  AndroidElement signin_continue = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/signin");
-	  signin_continue.click();
-	  
-	  AndroidElement signin_email = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/usernameEditText");
-	  signin_email.sendKeys(Configuration.email);
-	  
-	  AndroidElement signin_password = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/passwordEditText");
-	  signin_password.sendKeys(Configuration.password);
-	  
-	  AndroidElement sign_in = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/loginButton");
-	  sign_in.click();
+
+	  // AndroidElement signin_tosignin = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/signin");
+	  // signin_tosignin.click();
+    //
+	  // AndroidElement signin_email = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/usernameEditText");
+	  // signin_email.sendKeys(Configuration.email);
+    //
+	  // AndroidElement signin_password = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/passwordEditText");
+	  // signin_password.sendKeys(Configuration.password);
+    //
+	  // AndroidElement sign_in = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/loginButton");
+	  // sign_in.click();
   }
 
   @Test
   public void testCategory() {
 	  AndroidElement menu = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/icon");
 	  menu.click();
-	  
+
 	  AndroidElement cat_1 = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/explore_item_title");
 	  cat_1.click();
   }
@@ -194,12 +210,12 @@ public class RepresentativeTests {
   public void testContact() {
 	  AndroidElement menu_account = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/menu_user_profile_root");
 	  menu_account.click();
-	  
+
 	  AndroidElement menu_settings = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/settings_button");
-	  menu_settings.click(); 
-	  
+	  menu_settings.click();
+
 	  AndroidElement contact = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[9]");
-	  contact.click(); 
+	  contact.click();
   }
 
 
@@ -213,10 +229,10 @@ public class RepresentativeTests {
   public void testTerms() {
 	  AndroidElement menu_account = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/menu_user_profile_root");
 	  menu_account.click();
-	  
+
 	  AndroidElement menu_settings = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/menu_settings");
-	  menu_settings.click(); 
-	  
+	  menu_settings.click();
+
 	  AndroidElement legal = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[9]");
 	  legal.click();
   }

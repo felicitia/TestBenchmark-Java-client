@@ -96,6 +96,19 @@ public class RepresentativeTests {
 
   @Test
   public void testRemoveBookmark() {
+    //class android.view.View
+    //activity .ui.navigation.MainNavigationActivity
+    AndroidElement item_1 = (AndroidElement) driver.findElementById("com.abc.abcnews:id/cinematic_main_onclick");
+    item_1.click();
+    //class android.widget.TextView
+    //activity .ui.NewsItemPagerActivity
+    AndroidElement save_bookmark = (AndroidElement) driver.findElementById("com.abc.abcnews:id/menu_save_button");
+    save_bookmark.click();
+    //class android.widget.ImageButton
+    //activity .ui.NewsItemPagerActivity
+    AndroidElement back = (AndroidElement) driver.findElementByXPath("//android.widget.ImageButton[@content-desc=\"Navigate up\"]");
+    back.click();
+
     //class android.widget.ImageButton
     //activity .ui.navigation.MainNavigationActivity
     AndroidElement menu = (AndroidElement) driver.findElementByXPath("//android.widget.ImageButton[@content-desc=\"Drawer Opened\"]");
@@ -106,7 +119,7 @@ public class RepresentativeTests {
     menu_bookmark.click();
     //class android.view.ViewGroup
     //activity .ui.navigation.MainNavigationActivity
-    AndroidElement item_1 = (AndroidElement) driver.findElementById("com.abc.abcnews:id/headline_list_item_parent_container");
+    item_1 = (AndroidElement) driver.findElementById("com.abc.abcnews:id/headline_list_item_parent_container");
     item_1.click();
     //class android.widget.TextView
     //activity .ui.NewsItemPagerActivity
