@@ -199,7 +199,7 @@ public class RepresentativeTests {
 
   @Test
   public void testCategory() {
-	  AndroidElement menu = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/icon");
+	  AndroidElement menu = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout[5]");
 	  menu.click();
 
 	  AndroidElement cat_1 = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/explore_item_title");
