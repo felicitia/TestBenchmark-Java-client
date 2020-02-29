@@ -77,7 +77,7 @@ public class RepresentativeTests {
   public void testAbout() {
     AndroidElement more_option = (AndroidElement) driver.findElementByXPath("/android.widget.ImageView[@content-desc=\"More options\"]");
     more_option.click();
-    AndroidElement settings = (AndroidElement) driver.findElementById("bbc.mobile.news.ww:id/content");
+    AndroidElement settings = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[1]/android.widget.LinearLayout");
     settings.click();
 //    AndroidElement about = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[8]/android.widget.RelativeLayout");
 //    about.click();
