@@ -97,7 +97,7 @@ public class RepresentativeTests {
 	  AndroidElement tosearch = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/menu_search");
 	  tosearch.click();
 
-	  AndroidElement search_bar = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/search_plate");
+	  AndroidElement search_bar = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/search_bar");
 	  search_bar.sendKeys(Configuration.search+"\n");
 
 	  AndroidElement item_1 = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/post_card_text");
@@ -124,7 +124,7 @@ public class RepresentativeTests {
 	  AndroidElement tosearch = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/menu_search");
 	  tosearch.click();
 
-	  AndroidElement search_bar = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/search_plate");
+	  AndroidElement search_bar = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/search_bar");
 	  search_bar.sendKeys(Configuration.search+"\n");
 
 	  AndroidElement item_1 = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/post_card_text");
@@ -156,7 +156,7 @@ public class RepresentativeTests {
     AndroidElement tosearch = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/menu_search");
 	  tosearch.click();
 
-	  AndroidElement search_bar = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/search_plate");
+	  AndroidElement search_bar = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/search_bar");
 	  search_bar.sendKeys(Configuration.search+"\n");
 
 	  AndroidElement item_1 = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/post_card_text");
@@ -230,7 +230,7 @@ public class RepresentativeTests {
 	  AndroidElement menu_account = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/menu_user_profile_root");
 	  menu_account.click();
 
-	  AndroidElement menu_settings = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/menu_settings");
+	  AndroidElement menu_settings = (AndroidElement) driver.findElementById("com.buzzfeed.android:id/settings_button");
 	  menu_settings.click();
 
 	  AndroidElement legal = (AndroidElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[9]");
