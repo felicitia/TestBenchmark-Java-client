@@ -1,4 +1,4 @@
-package news.usatoday;
+package usatoday;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;

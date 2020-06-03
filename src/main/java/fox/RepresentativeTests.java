@@ -1,4 +1,4 @@
-package news.fox;
+package fox;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
