@@ -1,1 +1,1 @@
-## This repository is part of the FrUITeR project. Please refer to [FrUITeR's website](https://felicitia.github.io/FrUITeR/) for a complete guide on the latest version. Below are notes for an old version. Please ignore.
+## This repository is part of the FrUITeR project. Please refer to [FrUITeR's website](https://felicitia.github.io/FrUITeR/) for a complete guide on the latest version.
